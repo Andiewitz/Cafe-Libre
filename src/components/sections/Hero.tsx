@@ -1,4 +1,5 @@
 import { MaterialSymbol } from '@/components/ui/MaterialSymbol'
+import { WaveDivider } from '@/components/common/WaveDivider'
 import heroSplash from '@/assets/images/hero-espresso-splash.jpg'
 import avatarBarista from '@/assets/images/avatar-barista.jpg'
 import avatarCustomer from '@/assets/images/avatar-customer.jpg'
@@ -145,6 +146,7 @@ export function Hero() {
           </div>
         </div>
       </div>
+      <WaveDivider />
     </section>
   )
 }
