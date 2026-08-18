@@ -11,14 +11,12 @@ export function WaveDivider({ className, style }: WaveDividerProps) {
       className={cn('relative w-full h-20 pointer-events-none -mt-2 z-[9999]', className)}
       style={style}
     >
-      {/* Top edge blends with hero section - wavy top */}
       <svg
         className="absolute bottom-0 left-0 w-full h-full fill-background"
         preserveAspectRatio="none"
         viewBox="0 0 1440 200"
       >
-        {/* Non-uniform wavy path - creates organic dripping effect from bottom */}
-        <path d="M0,40 C180,40 240,10 420,10 C600,10 660,50 840,30 C1020,10 1080,-10 1260,20 C1440,50 1260,80 1440,120 L1440,200 L0,200 Z" />
+        <path d="M0,0 L1440,0 L1440,200 C1260,160 1080,180 900,160 C720,140 480,180 240,160 C120,180 0,160 0,200 Z" />
       </svg>
     </div>
   )
