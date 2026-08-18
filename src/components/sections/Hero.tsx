@@ -1,12 +1,13 @@
 import { MaterialSymbol } from '@/components/ui/MaterialSymbol'
 import newHeroImage from '@/assets/images/new-hero-image.png'
+import heroBackground from '@/assets/images/hero-background.png'
 import avatarBarista from '@/assets/images/avatar-barista.jpg'
 import avatarCustomer from '@/assets/images/avatar-customer.jpg'
 import avatarHands from '@/assets/images/avatar-hands.jpg'
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center pt-24 pb-16 pt-[106px] overflow-hidden">
+    <section className="relative min-h-screen flex items-center pt-24 pb-16 pt-[106px] overflow-hidden" style={{ backgroundImage: `url(${heroBackground})`, backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat" }}>
       {/* Abstract background elements */}
       <div className="absolute top-1/4 -right-1/4 w-1/2 h-1/2 bg-surface-container-high rounded-full blur-[120px] opacity-50 pointer-events-none"></div>
       <div className="absolute -bottom-1/4 -left-1/4 w-1/3 h-1/3 bg-primary-container rounded-full blur-[100px] opacity-40 pointer-events-none"></div>
