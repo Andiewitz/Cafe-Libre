@@ -6,7 +6,7 @@ import avatarHands from '@/assets/images/avatar-hands.jpg'
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden">
+    <section className="relative min-h-screen flex items-center pt-24 pb-16 pt-[106px] overflow-hidden">
       {/* Abstract background elements */}
       <div className="absolute top-1/4 -right-1/4 w-1/2 h-1/2 bg-surface-container-high rounded-full blur-[120px] opacity-50 pointer-events-none"></div>
       <div className="absolute -bottom-1/4 -left-1/4 w-1/3 h-1/3 bg-primary-container rounded-full blur-[100px] opacity-40 pointer-events-none"></div>
@@ -87,7 +87,7 @@ export function Hero() {
         <div className="md:col-span-6 relative mt-16 md:mt-0">
           <div className="relative w-full max-w-none mx-auto">
             {/* Subtle caramel gradient behind image */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-[#D2691E]/40 via-[#F4C28C]/30 to-[#FFF0F5]/20 rounded-2xl blur-[60px] opacity-70 pointer-events-none"></div>
+            <div className="absolute inset-0 bg-gradient-to-tr from-[#D2691E]/40 via-[#F4C28C]/30 to-[#FFF0F5]/20 rounded-full blur-[60px] opacity-70 pointer-events-none"></div>
             {/* Image container with new hero image - larger size */}
             <div className="relative w-full aspect-square overflow-hidden rounded-2xl">
               <img
