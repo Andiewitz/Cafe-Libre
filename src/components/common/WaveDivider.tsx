@@ -7,13 +7,16 @@ interface WaveDividerProps {
 
 export function WaveDivider({ className, style }: WaveDividerProps) {
   return (
-    <div className={cn('absolute bottom-0 left-0 w-full h-20 overflow-hidden pointer-events-none z-[9999]', className)} style={style}>
+    <div
+      className={cn('relative w-full h-20 pointer-events-none z-[9999] -mt-10', className)}
+      style={style}
+    >
       <svg
-        className="w-full h-full fill-background"
+        className="absolute bottom-0 left-0 w-full h-full fill-background"
         preserveAspectRatio="none"
-        viewBox="0 0 1440 160"
+        viewBox="0 0 1440 200"
       >
-        <path d="M0,0 C360,80 720,-20 1080,40 C1440,100 1440,160 1440,160 L0,160 Z" />
+        <path d="M0,100 C300,40 600,160 900,60 C1200,-40 1440,120 1440,120 L1440,200 L0,200 Z" />
       </svg>
     </div>
   )

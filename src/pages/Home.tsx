@@ -9,7 +9,7 @@ export function Home() {
   return (
     <>
       <Hero />
-      <WaveDivider style={{ position: 'fixed', top: '100vh', left: 0, right: 0, zIndex: 9999, pointerEvents: 'none' }} />
+      <WaveDivider />
       <SignatureCoffees />
       <AboutPreview />
       <Testimonials />
