@@ -1,5 +1,5 @@
 import { MaterialSymbol } from '@/components/ui/MaterialSymbol'
-import heroSplash from '@/assets/images/hero-espresso-splash.jpg'
+import newHeroImage from '@/assets/images/new-hero-image.png'
 import avatarBarista from '@/assets/images/avatar-barista.jpg'
 import avatarCustomer from '@/assets/images/avatar-customer.jpg'
 import avatarHands from '@/assets/images/avatar-hands.jpg'
@@ -95,18 +95,14 @@ export function Hero() {
         {/* Right column */}
         <div className="md:col-span-6 relative mt-16 md:mt-0">
           <div className="relative w-full aspect-square md:aspect-[4/5] max-w-lg mx-auto">
-            {/* Background organic shape */}
-            <div className="absolute inset-0 bg-surface-container-highest organic-shape transform rotate-12 scale-105 opacity-50"></div>
-
-            {/* Image container */}
-            <div className="absolute inset-0 organic-shape overflow-hidden border border-outline/20 ambient-shadow">
+            {/* Image container with new hero image */}
+            <div className="absolute inset-0 overflow-hidden">
               <img
-                src={heroSplash}
-                alt="Espresso coffee splashing dramatically from ceramic cup"
-                className="w-full h-full object-cover scale-110 hover:scale-105 transition-transform duration-1000 ease-out"
-                loading="lazy"
+                src={newHeroImage}
+                alt="Coffee brew being poured"
+                className="w-full h-full object-contain"
+                loading="eager"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent"></div>
             </div>
 
             {/* Floating element 1 */}
