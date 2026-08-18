@@ -18,8 +18,8 @@ const NotFound = lazy(() => import('@/pages/NotFound').then((mod) => ({ default:
 function Layout({ children }: { children: React.ReactNode }) {
   const location = useLocation()
 
-  useEffect(() => {
-    document.body.style.overflow = 'unset'
+   useEffect(() => {
+    document.body.style.overflowX = 'hidden'
   }, [location.pathname])
 
   return (

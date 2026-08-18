@@ -9,8 +9,8 @@ export function Hero() {
   return (
     <section className="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden">
       {/* Abstract background elements */}
-      <div className="absolute top-1/4 -right-1/4 w-[800px] h-[800px] bg-surface-container-high rounded-full blur-[120px] opacity-50 pointer-events-none"></div>
-      <div className="absolute -bottom-1/4 -left-1/4 w-[600px] h-[600px] bg-primary-container rounded-full blur-[100px] opacity-40 pointer-events-none"></div>
+      <div className="absolute top-1/4 -right-1/4 w-1/2 h-1/2 bg-surface-container-high rounded-full blur-[120px] opacity-50 pointer-events-none"></div>
+      <div className="absolute -bottom-1/4 -left-1/4 w-1/3 h-1/3 bg-primary-container rounded-full blur-[100px] opacity-40 pointer-events-none"></div>
 
       <div className="max-w-[1200px] mx-auto px-5 md:px-16 w-full grid grid-cols-1 md:grid-cols-12 gap-6 items-center relative z-10">
         {/* Left column */}
