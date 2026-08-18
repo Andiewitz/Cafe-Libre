@@ -87,7 +87,7 @@ export function Hero() {
         <div className="md:col-span-6 relative mt-16 md:mt-0">
           <div className="relative w-full max-w-none mx-auto">
             {/* Subtle caramel gradient behind image */}
-            <div className="absolute inset-0 bg-gradient-to-br from-secondary/20 via-primary/10 to-transparent rounded-full blur-[80px] opacity-60 pointer-events-none"></div>
+            <div className="absolute inset-0 bg-gradient-to-tr from-[#D2691E]/40 via-[#F4C28C]/30 to-[#FFF0F5]/20 rounded-2xl blur-[60px] opacity-70 pointer-events-none"></div>
             {/* Image container with new hero image - larger size */}
             <div className="relative w-full aspect-square overflow-hidden rounded-2xl">
               <img
