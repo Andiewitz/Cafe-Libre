@@ -18,6 +18,18 @@ export function SignatureCoffees() {
 
   return (
     <section className="py-24 md:py-32 relative bg-[#FFEEE0]" id="signature-blends">
+      {/* Wave divider - hero background color (#210e0b) sitting on top of this section */}
+      <div className="absolute top-0 left-0 w-full h-16 pointer-events-none z-[9999]">
+        <svg
+          className="block w-full h-full"
+          preserveAspectRatio="none"
+          viewBox="0 0 1440 60"
+          style={{ fill: '#210e0b' }}
+        >
+          <path d="M0,0 L1440,0 L1440,50 C1200,30 1040,45 880,25 C720,5 560,40 400,20 C240,0 80,35 0,20 Z" />
+        </svg>
+      </div>
+    
       {/* Background blur circles */}
       <div className="absolute top-1/4 -right-1/4 w-[600px] h-[600px] bg-secondary/10 rounded-full blur-[100px] opacity-30 pointer-events-none"></div>
       <div className="absolute -bottom-1/4 -left-1/4 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[90px] opacity-25 pointer-events-none"></div>
