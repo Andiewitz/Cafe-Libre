@@ -147,9 +147,9 @@ export function Hero() {
       </div>
 
       {/* Bottom SVG wave divider */}
-      <div className="absolute bottom-0 left-0 w-full overflow-hidden opacity-20 pointer-events-none">
+      <div className="absolute bottom-0 left-0 w-full h-16 overflow-hidden opacity-20 pointer-events-none">
         <svg
-          className="w-full h-16 fill-secondary"
+          className="w-full h-full fill-secondary"
           preserveAspectRatio="none"
           viewBox="0 0 1200 120"
         >
