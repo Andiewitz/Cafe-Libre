@@ -14,7 +14,7 @@ export function Hero() {
 
       <div className="max-w-[1200px] mx-auto px-5 md:px-16 w-full grid grid-cols-1 md:grid-cols-12 gap-6 items-center relative z-10">
         {/* Left column */}
-        <div className="md:col-span-6 flex flex-col items-start space-y-8 z-20">
+        <div className="md:col-span-6 flex flex-col items-start space-y-5 z-20">
           {/* Heading */}
           <h1 className="hero-h1 text-primary">
             Awaken Your Senses With <br />
@@ -28,7 +28,7 @@ export function Hero() {
           </p>
 
           {/* CTA buttons */}
-          <div className="flex flex-wrap gap-4 pt-4">
+          <div className="flex flex-wrap gap-4 pt-3">
             <a
               href="#signature-blends"
               className="bg-secondary text-on-secondary font-label-md px-8 py-4 rounded-full hover:bg-secondary-fixed transition-colors active:translate-y-[2px] shadow-lg shadow-secondary/20 flex items-center gap-2"
@@ -45,7 +45,7 @@ export function Hero() {
           </div>
 
           {/* Social proof */}
-          <div className="flex items-center gap-6 pt-8 border-t border-outline-variant/30 w-full max-w-md mt-12">
+          <div className="flex items-center gap-6 pt-6 border-t border-outline-variant/30 w-full max-w-md mt-6">
             <div className="flex -space-x-4">
               <img
                 src={avatarBarista}
@@ -85,7 +85,7 @@ export function Hero() {
         </div>
 
         {/* Right column */}
-        <div className="md:col-span-6 relative mt-16 md:mt-0">
+        <div className="md:col-span-6 relative mt-10 md:mt-0">
           <div className="relative w-full max-w-none mx-auto">
             {/* Subtle caramel gradient behind image */}
             <div className="absolute inset-0 bg-gradient-to-tr from-[#D2691E]/40 via-[#F4C28C]/30 to-[#FFF0F5]/20 rounded-full blur-[60px] opacity-70 pointer-events-none"></div>
