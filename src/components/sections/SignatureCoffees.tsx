@@ -18,16 +18,6 @@ export function SignatureCoffees() {
 
   return (
     <section className="py-24 md:py-32 relative bg-[#FFEEE0]" id="signature-blends">
-      {/* Wave divider from previous section */}
-      <div className="absolute top-0 left-0 w-full h-16 -translate-y-full overflow-hidden opacity-20 pointer-events-none">
-        <svg
-          className="w-full h-full fill-secondary rotate-180"
-          preserveAspectRatio="none"
-          viewBox="0 0 1200 120"
-        >
-          <path d="M0,0V46.29c47.79,22.2,103.59,32.15,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" />
-        </svg>
-      </div>
       {/* Background blur circles */}
       <div className="absolute top-1/4 -right-1/4 w-[600px] h-[600px] bg-secondary/10 rounded-full blur-[100px] opacity-30 pointer-events-none"></div>
       <div className="absolute -bottom-1/4 -left-1/4 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[90px] opacity-25 pointer-events-none"></div>
