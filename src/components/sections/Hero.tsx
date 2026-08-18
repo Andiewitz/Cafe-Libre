@@ -101,6 +101,9 @@ export function Hero() {
           </div>
         </div>
       </div>
+      
+      {/* Subtle gradient at bottom facing upwards to blend with hero background */}
+      <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-background via-background/80 to-transparent pointer-events-none"></div>
     </section>
   )
 }
