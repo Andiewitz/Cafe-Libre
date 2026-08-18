@@ -23,10 +23,10 @@ export function SignatureCoffees() {
         <svg
           className="block w-full h-full"
           preserveAspectRatio="none"
-          viewBox="0 0 1440 60"
+          viewBox="0 0 1440 80"
           style={{ fill: '#210e0b' }}
         >
-          <path d="M0,0 L1440,0 L1440,50 C1200,30 1040,45 880,25 C720,5 560,40 400,20 C240,0 80,35 0,20 Z" />
+          <path d="M0,0 L1440,0 L1440,70 C1180,10 1000,50 840,5 C680,-20 500,25 340,5 C160,-15 20,35 0,55 Z" />
         </svg>
       </div>
     
