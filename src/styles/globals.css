@@ -113,6 +113,13 @@
     overflow-x: hidden;
   }
 
+  /* Auto-zoom out on smaller screens to simulate 1080p view */
+  @media (max-width: 1919px) {
+    html {
+      zoom: 0.75;
+    }
+  }
+
   h1,
   h2,
   h3,
