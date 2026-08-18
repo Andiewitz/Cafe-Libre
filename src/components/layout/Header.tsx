@@ -13,19 +13,19 @@ export function Header() {
   const headerBg = useTransform(
     scrollYProgress,
     [0, 0.1],
-    ['rgba(33, 14, 11, 0)', 'rgba(33, 14, 11, 0.9)'],
+    ['rgba(255, 255, 255, 0)', 'rgba(255, 255, 255, 0.12)'],
   )
   const headerBorder = useTransform(
     scrollYProgress,
     [0, 0.1],
-    ['transparent', 'rgba(79, 68, 65, 0.3)'],
+    ['transparent', 'rgba(255, 255, 255, 0.18)'],
   )
 
   return (
     <motion.header
       className={`fixed top-0 left-0 w-full z-50 flex justify-between items-center px-5 md:px-16 py-4 transition-all duration-300 ${
         scrollYProgress > 0
-          ? 'bg-background/80 backdrop-blur-md border-b border-outline/20'
+          ? 'bg-white/10 backdrop-blur-md border-b border-white/20'
           : 'bg-background'
       }`}
       style={{ backgroundColor: headerBg, borderBottomColor: headerBorder }}

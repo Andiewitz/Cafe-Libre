@@ -3,7 +3,6 @@ import { useEffect, Suspense, lazy } from 'react'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { ScrollToTop } from '@/components/common/ScrollToTop'
-import { ScrollProgress } from '@/components/common/ScrollProgress'
 import { BackToTop } from '@/components/common/BackToTop'
 import { ErrorBoundary } from '@/components/common/ErrorBoundary'
 import { LoadingFallback } from '@/components/common/LoadingFallback'
@@ -36,7 +35,6 @@ export function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
-      <ScrollProgress />
       <ErrorBoundary>
         <Layout>
           <Suspense fallback={<LoadingFallback />}>
