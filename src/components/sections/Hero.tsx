@@ -85,11 +85,11 @@ export function Hero() {
 
         {/* Right column */}
         <div className="md:col-span-6 relative mt-16 md:mt-0">
-          <div className="relative w-full max-w-2xl mx-auto">
+          <div className="relative w-full max-w-none mx-auto">
             {/* Subtle caramel gradient behind image */}
             <div className="absolute inset-0 bg-gradient-to-br from-secondary/20 via-primary/10 to-transparent rounded-full blur-[80px] opacity-60 pointer-events-none"></div>
             {/* Image container with new hero image - larger size */}
-            <div className="relative w-full aspect-[4/3] overflow-hidden rounded-2xl">
+            <div className="relative w-full aspect-square overflow-hidden rounded-2xl">
               <img
                 src={newHeroImage}
                 alt="Coffee brew being poured"
