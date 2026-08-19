@@ -85,12 +85,12 @@ export function Hero() {
         </div>
 
         {/* Right column */}
-        <div className="md:col-span-6 relative mt-10 md:mt-0">
+        <div className="md:col-span-6 relative mt-10 md:mt-0 z-10">
           <div className="relative w-full max-w-none mx-auto">
             {/* Subtle caramel gradient behind image */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-[#D2691E]/40 via-[#F4C28C]/30 to-[#FFF0F5]/20 rounded-full blur-[60px] opacity-70 pointer-events-none"></div>
+            <div className="absolute inset-0 bg-gradient-to-tr from-[#D2691E]/40 via-[#F4C28C]/30 to-[#FFF0F5]/20 rounded-full blur-[60px] opacity-70 pointer-events-none z-10"></div>
             {/* Image container with new hero image */}
-            <div className="relative w-full aspect-square overflow-hidden rounded-2xl">
+            <div className="relative w-full aspect-square overflow-hidden rounded-2xl z-20">
               <img
                 src={newHeroImage}
                 alt="Coffee brew being poured"
@@ -102,8 +102,8 @@ export function Hero() {
         </div>
       </div>
       
-      {/* Subtle gradient at bottom facing upwards to blend with hero background */}
-      <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-background via-background/80 to-transparent pointer-events-none"></div>
+      {/* Brown gradient facing upwards with higher z-index (z-30) than the caramel gradient */}
+      <div className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-[#210e0b] via-[#210e0b]/80 to-transparent pointer-events-none z-30"></div>
     </section>
   )
 }
