@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import coldBrewCup from '@/assets/images/cold-brew-cup.png'
 import blackAmericanoImg from '@/assets/images/black-americano.png'
@@ -51,7 +51,7 @@ const BREW_SLIDES: BrewSlide[] = [
     image: blackAmericanoImg,
     imageAlt: 'Highland Ember Americano double extraction',
     imageContainerClass:
-      '-top-20 sm:-top-28 md:-top-32 -left-2 sm:-left-6 md:-left-8 w-[74%] sm:w-[72%] md:w-[70%] max-w-[400px]',
+      '-top-20 sm:-top-28 md:-top-32 left-3 sm:left-5 md:left-7 w-[72%] sm:w-[70%] md:w-[68%] max-w-[390px]',
     badges: [
       ['DOUBLE SHOT', 'LUNGO'],
       ['ETHIOPIAN', 'YIRGACHEFFE'],
@@ -84,6 +84,24 @@ export function SignatureCoffees() {
   const [selectedSize, setSelectedSize] = useState<'Small' | 'Medium' | 'Large'>('Medium')
   const [addedMain, setAddedMain] = useState(false)
   const [addedItems, setAddedItems] = useState<Record<string, boolean>>({})
+
+  // Preload and warm cache for all slide and product imagery
+  useEffect(() => {
+    const imagesToPreload = [
+      coldBrewCup,
+      blackAmericanoImg,
+      cappuccinoSlideImg,
+      heroEspressoSplash,
+      latteImg,
+      coffeeBeansBag,
+      cappuccinoImg,
+    ]
+
+    imagesToPreload.forEach((src) => {
+      const img = new Image()
+      img.src = src
+    })
+  }, [])
 
   const currentSlide = BREW_SLIDES[activeSlide]
   const unitPrice = currentSlide.sizePrices[selectedSize]
@@ -436,6 +454,13 @@ export function SignatureCoffees() {
             })}
           </div>
         </div>
+      </div>
+
+      {/* Hidden image preloader to keep all slide graphics cached and GPU decoded in browser memory */}
+      <div className="hidden" aria-hidden="true">
+        {BREW_SLIDES.map((slide, i) => (
+          <img key={i} src={slide.image} alt="" loading="eager" decoding="async" />
+        ))}
       </div>
     </section>
   )
