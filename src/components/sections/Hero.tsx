@@ -12,9 +12,9 @@ export function Hero() {
       <div className="absolute top-1/4 -right-1/4 w-1/2 h-1/2 bg-surface-container-high rounded-full blur-[120px] opacity-50 pointer-events-none"></div>
       <div className="absolute -bottom-1/4 -left-1/4 w-1/3 h-1/3 bg-primary-container rounded-full blur-[100px] opacity-40 pointer-events-none"></div>
 
-      <div className="max-w-[1200px] mx-auto px-5 md:px-16 w-full grid grid-cols-1 md:grid-cols-12 gap-6 items-center relative z-10">
-        {/* Left column */}
-        <div className="md:col-span-6 flex flex-col items-start space-y-5 z-20">
+      <div className="max-w-[1200px] mx-auto px-5 md:px-16 w-full grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+        {/* Left column - elevated to z-40 so headings, buttons, and reviews sit above the bottom gradient */}
+        <div className="md:col-span-6 flex flex-col items-start space-y-5 relative z-40">
           {/* Heading */}
           <h1 className="hero-h1 text-primary">
             Awaken Your Senses With <br />
@@ -44,8 +44,8 @@ export function Hero() {
             </a>
           </div>
 
-          {/* Social proof */}
-          <div className="flex items-center gap-6 pt-6 border-t border-outline-variant/30 w-full max-w-md mt-6">
+          {/* Social proof / Reviews (z-50) */}
+          <div className="flex items-center gap-6 pt-6 border-t border-outline-variant/30 w-full max-w-md mt-6 relative z-50">
             <div className="flex -space-x-4">
               <img
                 src={avatarBarista}
