@@ -1,0 +1,6 @@
+{
+  "name": "Café Aura",
+  "description": "Artisan coffee shop website with handcrafted blends, specialty menu, stories, and location locator.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

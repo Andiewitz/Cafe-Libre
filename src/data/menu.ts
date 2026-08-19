@@ -1,3 +1,15 @@
+import espressoImg from '@/assets/images/espresso.jpg'
+import cappuccinoImg from '@/assets/images/cappuccino.jpg'
+import macchiatoImg from '@/assets/images/macchiato.jpg'
+import mochaImg from '@/assets/images/mocha.jpg'
+import latteImg from '@/assets/images/latte.jpg'
+import matchaImg from '@/assets/images/matcha.jpg'
+import teaImg from '@/assets/images/tea.jpg'
+import croissantImg from '@/assets/images/croissant.jpg'
+import cookieImg from '@/assets/images/cookie.jpg'
+import cinnamonImg from '@/assets/images/cinnamon.jpg'
+import coldBrewImg from '@/assets/images/cold-brew.jpg'
+
 export type MenuItem = {
   id: string
   name: string
@@ -11,8 +23,6 @@ export type MenuItem = {
   tastingNotes?: string[]
 }
 
-const img = (name: string) => `/src/assets/images/${name}.jpg`
-
 export const menuItems: MenuItem[] = [
   {
     id: '1',
@@ -21,25 +31,25 @@ export const menuItems: MenuItem[] = [
       'A velvety smooth experience featuring notes of caramel and dark chocolate, perfectly balanced with steamed micro-foam.',
     price: 6.5,
     category: 'coffee',
-    image: img('latte-supreme'),
+    image: latteImg,
     popular: true,
     badges: ['Best Seller', 'Medium Roast'],
   },
   {
     id: '2',
     name: 'Espresso Dark',
-    description: 'Intense, full-bodied shot.',
+    description: 'Intense, full-bodied shot with rich crema and dark chocolate undertones.',
     price: 4.0,
     category: 'coffee',
-    image: img('espresso-dark'),
+    image: espressoImg,
   },
   {
     id: '3',
     name: 'Matcha Reserve',
-    description: 'Ceremonial grade green tea.',
+    description: 'Ceremonial grade Japanese green tea whisked to smooth perfection.',
     price: 5.5,
     category: 'tea',
-    image: img('matcha-reserve'),
+    image: matchaImg,
   },
   {
     id: '4',
@@ -47,7 +57,7 @@ export const menuItems: MenuItem[] = [
     description: 'Rich, velvety shot of pure coffee essence',
     price: 3.5,
     category: 'coffee',
-    image: img('espresso'),
+    image: espressoImg,
     popular: true,
   },
   {
@@ -56,7 +66,7 @@ export const menuItems: MenuItem[] = [
     description: 'Espresso with steamed milk foam, finished with cocoa dust',
     price: 4.5,
     category: 'coffee',
-    image: img('cappuccino'),
+    image: cappuccinoImg,
     popular: true,
   },
   {
@@ -65,7 +75,7 @@ export const menuItems: MenuItem[] = [
     description: 'Layered vanilla espresso with caramel drizzle',
     price: 5.25,
     category: 'coffee',
-    image: img('macchiato'),
+    image: macchiatoImg,
   },
   {
     id: '7',
@@ -73,7 +83,7 @@ export const menuItems: MenuItem[] = [
     description: 'Espresso with steamed milk and rich chocolate',
     price: 5.0,
     category: 'coffee',
-    image: img('mocha'),
+    image: mochaImg,
   },
   {
     id: '8',
@@ -81,7 +91,7 @@ export const menuItems: MenuItem[] = [
     description: 'Black tea with bergamot and culinary lavender',
     price: 3.75,
     category: 'tea',
-    image: img('tea'),
+    image: teaImg,
   },
   {
     id: '9',
@@ -89,7 +99,7 @@ export const menuItems: MenuItem[] = [
     description: 'Soothing chamomile tea with a hint of honey',
     price: 3.25,
     category: 'tea',
-    image: img('tea'),
+    image: teaImg,
   },
   {
     id: '10',
@@ -97,7 +107,7 @@ export const menuItems: MenuItem[] = [
     description: 'Flaky, buttery French pastry baked fresh daily',
     price: 3.75,
     category: 'pastries',
-    image: img('croissant'),
+    image: croissantImg,
     popular: true,
   },
   {
@@ -106,7 +116,7 @@ export const menuItems: MenuItem[] = [
     description: 'Warm, chewy cookie loaded with dark chocolate chips',
     price: 2.75,
     category: 'pastries',
-    image: img('cookie'),
+    image: cookieImg,
   },
   {
     id: '12',
@@ -114,7 +124,7 @@ export const menuItems: MenuItem[] = [
     description: 'Swirled with house-made cinnamon and cream cheese glaze',
     price: 4.25,
     category: 'pastries',
-    image: img('cinnamon'),
+    image: cinnamonImg,
   },
   {
     id: '13',
@@ -122,7 +132,7 @@ export const menuItems: MenuItem[] = [
     description: 'Smooth, slow-steeped coffee served over ice',
     price: 4.5,
     category: 'cold-drinks',
-    image: img('cold-brew'),
+    image: coldBrewImg,
     popular: true,
   },
   {
@@ -131,7 +141,7 @@ export const menuItems: MenuItem[] = [
     description: 'Espresso with cold milk and vanilla syrup over ice',
     price: 5.0,
     category: 'cold-drinks',
-    image: img('latte'),
+    image: latteImg,
   },
   {
     id: '15',
@@ -139,7 +149,7 @@ export const menuItems: MenuItem[] = [
     description: 'Chilled still or sparkling water with lemon',
     price: 2.5,
     category: 'cold-drinks',
-    image: img('cold-brew'),
+    image: coldBrewImg,
   },
 ]
 
