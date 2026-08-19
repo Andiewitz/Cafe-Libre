@@ -194,6 +194,9 @@
   .font-sans {
     font-family: var(--font-family-sans);
   }
+  .font-hero {
+    font-family: var(--font-family-hero);
+  }
   .font-headline-xl {
     font-family: var(--font-family-display);
     font-size: 4rem;
