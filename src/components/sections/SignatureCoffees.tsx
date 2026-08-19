@@ -26,15 +26,23 @@ export function SignatureCoffees() {
                 <span className="mx-4 text-charcoal font-medium">03</span>
                 <button className="text-charcoal hover:text-secondary transition-colors">+</button>
               </div>
-              <button className="bg-[#5D3A1A] text-white px-6 py-3 rounded-full hover:bg-[#4A2A15] transition-colors">
+              <button className="bg-[#3D2010] text-white px-6 py-3 rounded-full hover:bg-[#2A150A] transition-colors">
                 Buy $17.97
               </button>
             </div>
           </div>
 
-          {/* Right: Soft-edged square with diagonal top slope */}
-          <div className="soft-square aspect-square flex items-center justify-center">
-            <span className="text-white/40 text-lg font-medium">Image placeholder</span>
+          {/* Right: Right side TALL (top), left side LOWER (down), all 4 corners rounded */}
+          <div className="relative">
+            <svg viewBox="0 0 500 360" className="w-full h-auto" style={{ maxHeight: '360px' }}>
+              <path
+                d="M 30 340 Q 0 340 0 310 L 0 100 Q 0 80 30 80 L 470 0 Q 490 0 490 30 L 490 310 Q 490 340 470 340 L 30 340 Z"
+                fill="#3D2010"
+              />
+            </svg>
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+              <span className="text-white/30 text-lg font-medium">Image</span>
+            </div>
           </div>
         </div>
 
