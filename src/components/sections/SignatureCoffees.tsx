@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import coldBrewCup from '@/assets/images/cold-brew-cup.png'
+import blackAmericanoImg from '@/assets/images/black-americano.png'
+import cappuccinoSlideImg from '@/assets/images/capuccino.png'
 import coffeeBeansBag from '@/assets/images/coffee-beans-bag.jpg'
 import heroEspressoSplash from '@/assets/images/hero-espresso-splash.jpg'
 import latteImg from '@/assets/images/latte.jpg'
@@ -9,7 +11,11 @@ import cappuccinoImg from '@/assets/images/cappuccino.jpg'
 interface BrewSlide {
   title: string
   subtitle: string
+  tagline: string
   description: string
+  image: string
+  imageAlt: string
+  imageContainerClass: string
   badges: [string, string][]
   sizePrices: {
     Small: number
@@ -20,40 +26,55 @@ interface BrewSlide {
 
 const BREW_SLIDES: BrewSlide[] = [
   {
-    title: 'Brew Pod',
-    subtitle: 'Coffee House',
+    title: 'Obsidian Nitro',
+    subtitle: 'Cold Reserve',
+    tagline: 'Single-Origin • 24h Cold Drip',
     description:
-      'Experience the delicious taste your ears deserve to. Savor for the ears, very for the heart. A treat to your ears.',
+      'Slow-steeped for 24 continuous hours in pure mountain spring water, our Colombian Huila roast delivers a naturally sweet, silky cascade with notes of dark cacao and roasted hazelnut.',
+    image: coldBrewCup,
+    imageAlt: 'Obsidian Nitro Cold Brew with splashing coffee crown',
+    imageContainerClass:
+      '-top-24 sm:-top-32 md:-top-36 -left-4 sm:-left-8 md:-left-10 w-[78%] sm:w-[75%] md:w-[72%] max-w-[420px]',
     badges: [
-      ['RICH', 'TASTE'],
-      ['PREMIUM', 'BEANS'],
-      ['HOT &', 'COFFEE'],
+      ['24-HR', 'COLD DRIP'],
+      ['DARK CACAO', 'FINISH'],
+      ['ULTRA-LOW', 'ACIDITY'],
     ],
     sizePrices: { Small: 4.99, Medium: 5.99, Large: 6.99 },
   },
   {
-    title: 'Nitro Velvet',
-    subtitle: 'Cold Reserve',
+    title: 'Highland Ember',
+    subtitle: 'Artisan Americano',
+    tagline: 'Double Shot Lungo • Wild Honey',
     description:
-      'Infused with silky nitrogen micro-bubbles for an ultra-creamy head, cascading texture, and subtle hints of dark cacao.',
+      'A double shot of roasted Ethiopian Yirgacheffe pulled over crystal-clear artisan hot water, releasing fragrant citrus blossoms, toasted caramel, and a golden, resilient crema.',
+    image: blackAmericanoImg,
+    imageAlt: 'Highland Ember Americano double extraction',
+    imageContainerClass:
+      '-top-20 sm:-top-28 md:-top-32 -left-2 sm:-left-6 md:-left-8 w-[74%] sm:w-[72%] md:w-[70%] max-w-[400px]',
     badges: [
-      ['MICRO', 'BUBBLES'],
-      ['ORGANIC', 'SINGLE'],
-      ['COLD', 'STEEPED'],
+      ['DOUBLE SHOT', 'LUNGO'],
+      ['ETHIOPIAN', 'YIRGACHEFFE'],
+      ['GOLDEN', 'CREMA'],
     ],
-    sizePrices: { Small: 5.49, Medium: 6.49, Large: 7.49 },
+    sizePrices: { Small: 4.49, Medium: 5.29, Large: 5.99 },
   },
   {
-    title: 'Caramel Cloud',
-    subtitle: 'Artisan Brew',
+    title: 'Velvet Silk',
+    subtitle: 'Crown Cappuccino',
+    tagline: 'Italian Dark Roast • Micro-Foam',
     description:
-      'Slow-dripped for 24 hours over sweet Bourbon beans, crowned with salted caramel cold foam and raw cane drizzle.',
+      'Equal parts intense northern Italian espresso, steamed whole milk, and dense micro-foam crowned with raw Ceylon cinnamon and organic demerara crystals.',
+    image: cappuccinoSlideImg,
+    imageAlt: 'Velvet Silk Cappuccino with steamed micro-foam',
+    imageContainerClass:
+      '-top-20 sm:-top-28 md:-top-32 -left-2 sm:-left-6 md:-left-8 w-[75%] sm:w-[72%] md:w-[70%] max-w-[405px]',
     badges: [
-      ['SWEET', 'CREAM'],
-      ['24-HR', 'DRIP'],
-      ['AMBER', 'CARAMEL'],
+      ['MICRO-FOAM', 'SILK HEAD'],
+      ['CEYLON', 'CINNAMON'],
+      ['ITALIAN', 'DARK ROAST'],
     ],
-    sizePrices: { Small: 5.29, Medium: 6.29, Large: 7.29 },
+    sizePrices: { Small: 5.29, Medium: 6.29, Large: 7.19 },
   },
 ]
 
@@ -92,29 +113,44 @@ export function SignatureCoffees() {
   const products = [
     {
       id: 'vanilla-bliss',
-      name: 'Vanilla Bliss',
-      type: 'Vanilla Bean Light Roast',
+      name: 'Vanilla Blossom',
+      type: 'Madagascar Vanilla Light Roast',
       price: '$13.49',
       image: latteImg,
     },
     {
       id: 'medium-roast',
-      name: 'Medium Roast',
-      type: 'Colombian Single Origin',
+      name: 'Huila Sunrise Estate',
+      type: 'Colombian Single-Origin Medium',
       price: '$11.49',
       image: coffeeBeansBag,
     },
     {
       id: 'intense-roast',
-      name: 'Intense Roast',
-      type: 'Dark Espresso Roast',
+      name: 'Midnight Crema',
+      type: 'Italian Dark Espresso Roast',
       price: '$12.49',
       image: cappuccinoImg,
     },
   ]
 
   return (
-    <section className="py-20 md:py-32 bg-[#F6EDE2] relative overflow-hidden" id="signature-blends">
+    <section className="pt-32 sm:pt-40 md:pt-48 lg:pt-56 pb-20 md:pb-32 bg-[#F6EDE2] relative overflow-hidden" id="signature-blends">
+      {/* Wavy transition sitting on top of section matching hero background color */}
+      <div className="absolute top-0 left-0 right-0 w-full overflow-hidden leading-none z-0 pointer-events-none">
+        <svg
+          viewBox="0 0 1440 220"
+          className="relative block w-full h-[90px] sm:h-[130px] md:h-[175px] lg:h-[220px]"
+          preserveAspectRatio="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0,0 L1440,0 L1440,90 C1320,170 1140,210 940,170 C700,120 520,30 260,85 C130,115 40,165 0,190 Z"
+            fill="#210e0b"
+          />
+        </svg>
+      </div>
+
       {/* Toast notification for add-to-cart */}
       <AnimatePresence>
         {addedMain && (
@@ -236,16 +272,16 @@ export function SignatureCoffees() {
                 />
               </svg>
 
-              {/* Enlarged Cold Brew Cup Splashing Image floating generously over the wedge */}
-              <div className="absolute -top-24 sm:-top-32 md:-top-36 -left-4 sm:-left-8 md:-left-10 w-[78%] sm:w-[75%] md:w-[72%] max-w-[420px] pointer-events-none z-10">
+              {/* Dynamic Coffee Cup / Brew Image floating over the wedge */}
+              <div className={`absolute ${currentSlide.imageContainerClass} pointer-events-none z-10 flex items-center justify-center`}>
                 <motion.img
                   key={activeSlide}
-                  initial={{ scale: 0.95, rotate: -15, opacity: 0.8 }}
-                  animate={{ scale: 1, rotate: -12, opacity: 1 }}
-                  transition={{ duration: 0.4, ease: 'easeOut' }}
-                  src={coldBrewCup}
-                  alt="Cold Brew Coffee Cup with Splash"
-                  className="w-full h-auto drop-shadow-[0_20px_30px_rgba(0,0,0,0.5)] transform"
+                  initial={{ scale: 0.92, rotate: activeSlide === 0 ? -16 : -4, opacity: 0.7 }}
+                  animate={{ scale: 1, rotate: activeSlide === 0 ? -12 : 0, opacity: 1 }}
+                  transition={{ duration: 0.45, ease: 'easeOut' }}
+                  src={currentSlide.image}
+                  alt={currentSlide.imageAlt}
+                  className="w-full h-auto drop-shadow-[0_20px_35px_rgba(0,0,0,0.55)] transform object-contain"
                   loading="eager"
                 />
               </div>
