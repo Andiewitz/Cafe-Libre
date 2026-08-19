@@ -153,7 +153,7 @@ export function SignatureCoffees() {
   ]
 
   return (
-    <section className="pt-32 sm:pt-40 md:pt-48 lg:pt-56 pb-20 md:pb-32 bg-[#F6EDE2] relative overflow-hidden" id="signature-blends">
+    <section className="pt-40 sm:pt-52 md:pt-64 lg:pt-72 pb-20 md:pb-32 bg-[#F6EDE2] relative overflow-hidden" id="signature-blends">
       {/* Wavy transition sitting on top of section matching hero background color */}
       <div className="absolute top-0 left-0 right-0 w-full overflow-hidden leading-none z-0 pointer-events-none">
         <svg
@@ -191,7 +191,7 @@ export function SignatureCoffees() {
         )}
       </AnimatePresence>
 
-      <div className="max-w-[1240px] mx-auto px-5 sm:px-8 md:px-16 relative z-10">
+      <div className="max-w-[1240px] mx-auto px-5 sm:px-8 md:px-16 relative z-10 pt-8 sm:pt-14 md:pt-16">
         {/* Main Split Section */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center mb-20 md:mb-28">
           {/* Left Column: Product info & pricing */}

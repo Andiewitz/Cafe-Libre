@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { MaterialSymbol } from '@/components/ui/MaterialSymbol'
 import newHeroImage from '@/assets/images/new-hero-image.png'
 import heroBackground from '@/assets/images/hero-background.png'
@@ -36,12 +37,12 @@ export function Hero() {
               Explore Blends
               <MaterialSymbol name="arrow_forward" />
             </a>
-            <a
-              href="#visit"
+            <Link
+              to="/location"
               className="bg-surface text-secondary border border-secondary/30 font-label-md px-8 py-4 rounded-full hover:border-secondary transition-colors active:translate-y-[2px] flex items-center gap-2"
             >
               Visit Us
-            </a>
+            </Link>
           </div>
 
           {/* Social proof / Reviews (z-50) */}
