@@ -7,7 +7,7 @@ import { cn } from '@/utils/cn'
 
 export function About() {
   return (
-    <section className="pt-24 pb-20">
+    <section className="pt-32 pb-20 bg-[#F6EDE2] min-h-screen text-[#2E170C]">
       <Container size="lg">
         {/* Hero */}
         <motion.div
@@ -19,9 +19,9 @@ export function About() {
           <div className="mb-3 flex justify-center">
             <CoffeeBeanIcon className="h-7 w-7 text-accent" />
           </div>
-          <h1 className="font-display text-4xl font-bold">Our Story</h1>
-          <p className="mt-3 max-w-2xl text-primary-muted">
-            From a passion for exceptional coffee to a thriving community hub.
+          <h1 className="font-hero text-4xl sm:text-5xl font-normal text-[#2E170C]">Our Coffee Craft</h1>
+          <p className="mt-3 max-w-2xl mx-auto text-[#5D4233]">
+            From ethical direct-trade farm partnerships to small-batch single origin perfection.
           </p>
         </motion.div>
 

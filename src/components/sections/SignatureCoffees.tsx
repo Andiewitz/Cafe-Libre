@@ -254,24 +254,6 @@ export function SignatureCoffees() {
                 <span>Buy ${totalPrice}</span>
               </button>
             </div>
-
-            {/* Decorative bottom-left espresso splash */}
-            <div className="pt-6 flex items-center gap-4">
-              <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-2xl overflow-hidden shadow-md border-2 border-white/70 shrink-0">
-                <img
-                  src={heroEspressoSplash}
-                  alt="Espresso with coffee splash"
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                />
-              </div>
-              <div className="text-xs sm:text-sm text-[#7A5B4C] max-w-[200px] leading-snug">
-                <span className="font-semibold text-[#2E170C] block mb-1">
-                  Freshly Hand-Crafted
-                </span>
-                Every cup roasted & poured to absolute aromatic perfection.
-              </div>
-            </div>
           </div>
 
           {/* Right Column: Enlarged Dark Brown Wedge/Triangle SVG + Large Cold Brew Cup */}
