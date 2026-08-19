@@ -262,6 +262,24 @@
   }
 }
 
+  .soft-square {
+    background: #5D3A1A;
+    border-radius: 0 40px 40px 40px;
+    position: relative;
+  }
+  .soft-square::before {
+    content: '';
+    position: absolute;
+    top: -28px;
+    left: 0;
+    right: 0;
+    height: 36px;
+    background: #5D3A1A;
+    border-radius: 0 40px 0 0;
+    transform: skewY(-3deg);
+    transform-origin: bottom right;
+  }
+
 @keyframes morph {
   0% {
     border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;

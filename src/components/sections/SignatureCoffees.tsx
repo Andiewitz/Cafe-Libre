@@ -1,25 +1,67 @@
 export function SignatureCoffees() {
   return (
-    <section className="py-24 md:py-32 relative bg-white" id="signature-blends">
-      {/* Wave divider - hero background color (#210e0b) sitting on top of this section */}
-      <div className="absolute top-0 left-0 w-full h-16 pointer-events-none z-[9999]">
-        <svg
-          className="block w-full h-full"
-          preserveAspectRatio="none"
-          viewBox="0 0 1440 80"
-          style={{ fill: '#210e0b' }}
-        >
-          <path d="M0,0 L1440,0 L1440,70 C1180,10 1000,50 840,5 C680,-20 500,25 340,5 C160,-15 20,35 0,55 Z" />
-        </svg>
-      </div>
-
-      <div className="max-w-[1200px] mx-auto px-5 md:px-16 text-center">
-        <h2 className="font-hero text-[2.5rem] md:text-[4rem] font-normal text-charcoal mb-6 tracking-tight">
+    <section className="py-24 md:py-32 bg-[#F5E6D3]" id="signature-blends">
+      <div className="max-w-[1200px] mx-auto px-5 md:px-16">
+        <h2 className="font-hero text-[2.5rem] md:text-[4rem] font-normal text-charcoal mb-16 text-center">
           Our Most Popular Picks
         </h2>
-        <p className="font-body-lg text-charcoal/70 max-w-2xl mx-auto">
-          Hand-selected favorites loved by our community. Each cup tells a story.
-        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
+          {/* Left: Product info */}
+          <div>
+            <h3 className="font-hero text-3xl md:text-4xl text-charcoal mb-4">
+              Brew Pod Coffee House
+            </h3>
+            <p className="text-charcoal/70 mb-6 leading-relaxed">
+              Experience the delicious taste your ears deserve to. Savor for the ears,
+              very for the heart. A treat to your ears.
+            </p>
+            <div className="flex items-baseline gap-3 mb-6">
+              <span className="text-3xl font-bold text-charcoal">$5.99</span>
+              <span className="text-lg text-charcoal/50 line-through">$6.99</span>
+            </div>
+            <div className="flex items-center gap-4">
+              <div className="flex items-center border border-charcoal/20 rounded-full px-4 py-2">
+                <button className="text-charcoal hover:text-secondary transition-colors">−</button>
+                <span className="mx-4 text-charcoal font-medium">03</span>
+                <button className="text-charcoal hover:text-secondary transition-colors">+</button>
+              </div>
+              <button className="bg-[#5D3A1A] text-white px-6 py-3 rounded-full hover:bg-[#4A2A15] transition-colors">
+                Buy $17.97
+              </button>
+            </div>
+          </div>
+
+          {/* Right: Soft-edged square with diagonal top slope */}
+          <div className="soft-square aspect-square flex items-center justify-center">
+            <span className="text-white/40 text-lg font-medium">Image placeholder</span>
+          </div>
+        </div>
+
+        {/* Bottom: Product cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="bg-white rounded-2xl p-6 shadow-sm">
+            <div className="aspect-square bg-gray-50 rounded-xl mb-4 flex items-center justify-center">
+              <span className="text-gray-300 text-sm">Image</span>
+            </div>
+            <h3 className="font-bold text-charcoal mb-1">Vanilla Bliss</h3>
+            <p className="text-charcoal/70 font-medium">$13.49</p>
+          </div>
+          <div className="bg-white rounded-2xl p-6 shadow-sm">
+            <div className="aspect-square bg-gray-50 rounded-xl mb-4 flex items-center justify-center">
+              <span className="text-gray-300 text-sm">Image</span>
+            </div>
+            <h3 className="font-bold text-charcoal mb-1">Medium Roast</h3>
+            <p className="text-charcoal/70 font-medium">$11.49</p>
+          </div>
+          <div className="bg-white rounded-2xl p-6 shadow-sm">
+            <div className="aspect-square bg-gray-50 rounded-xl mb-4 flex items-center justify-center">
+              <span className="text-gray-300 text-sm">Image</span>
+            </div>
+            <h3 className="font-bold text-charcoal mb-1">Intense Roast</h3>
+            <p className="text-charcoal/70 font-medium">$12.49</p>
+          </div>
+        </div>
       </div>
     </section>
   )
