@@ -8,16 +8,16 @@ import avatarHands from '@/assets/images/avatar-hands.jpg'
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center pt-24 pb-16 pt-[160px] overflow-hidden" style={{ backgroundImage: `url(${heroBackground})`, backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat" }}>
+    <section className="relative min-h-screen flex items-center pt-28 sm:pt-36 md:pt-40 pb-16 overflow-hidden" style={{ backgroundImage: `url(${heroBackground})`, backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat" }}>
       {/* Abstract background elements */}
       <div className="absolute top-1/4 -right-1/4 w-1/2 h-1/2 bg-surface-container-high rounded-full blur-[120px] opacity-50 pointer-events-none"></div>
       <div className="absolute -bottom-1/4 -left-1/4 w-1/3 h-1/3 bg-primary-container rounded-full blur-[100px] opacity-40 pointer-events-none"></div>
 
-      <div className="max-w-[1200px] mx-auto px-5 md:px-16 w-full grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
-        {/* Left column - elevated to z-40 so headings, buttons, and reviews sit above the bottom gradient */}
-        <div className="md:col-span-6 flex flex-col items-start space-y-5 relative z-40">
+      <div className="max-w-[1200px] mx-auto px-5 md:px-16 w-full grid grid-cols-1 md:grid-cols-12 gap-y-0 gap-x-6 items-center">
+        {/* Text column - order-2 on mobile, placed over bottom 1/4 of the image (-mt-24 / -mt-32), order-1 on desktop */}
+        <div className="order-2 md:order-1 md:col-span-6 flex flex-col items-start space-y-5 relative z-40 -mt-20 sm:-mt-28 md:mt-0">
           {/* Heading */}
-          <h1 className="hero-h1 text-primary">
+          <h1 className="hero-h1 text-primary drop-shadow-[0_2px_12px_rgba(0,0,0,0.6)] md:drop-shadow-none">
             Awaken Your Senses With <br />
             <span className="text-secondary italic font-light">Every Sip.</span>
           </h1>
@@ -85,9 +85,9 @@ export function Hero() {
           </div>
         </div>
 
-        {/* Right column */}
-        <div className="md:col-span-6 relative mt-10 md:mt-0 z-10">
-          <div className="relative w-full max-w-none mx-auto">
+        {/* Right column - order-1 on mobile (on top), order-2 on desktop */}
+        <div className="order-1 md:order-2 md:col-span-6 relative z-10">
+          <div className="relative w-full max-w-[360px] sm:max-w-[460px] md:max-w-none mx-auto">
             {/* Subtle caramel gradient behind image */}
             <div className="absolute inset-0 bg-gradient-to-tr from-[#D2691E]/40 via-[#F4C28C]/30 to-[#FFF0F5]/20 rounded-full blur-[60px] opacity-70 pointer-events-none z-10"></div>
             {/* Image container with new hero image */}

@@ -215,44 +215,47 @@ export function SignatureCoffees() {
               </motion.div>
             </AnimatePresence>
 
-            {/* Pricing */}
-            <div className="flex items-baseline gap-3 pt-1">
-              <span className="text-4xl sm:text-5xl font-bold text-[#2E170C] font-sans tracking-tight">
-                ${unitPrice.toFixed(2)}
-              </span>
-              <span className="text-xl sm:text-2xl text-[#8E7365] line-through font-sans">
-                ${originalUnitPrice.toFixed(2)}
-              </span>
-            </div>
-
-            {/* Quantity selector and Buy button */}
-            <div className="flex flex-wrap items-center gap-4 pt-2 w-full sm:w-auto">
-              <div className="flex items-center bg-[#D6A068]/30 border border-[#C88846]/40 rounded-full px-3.5 py-1.5 gap-3.5 shadow-sm">
-                <button
-                  onClick={() => setQuantity((prev) => Math.max(1, prev - 1))}
-                  className="w-8 h-8 rounded-full bg-[#C87D32] text-white flex items-center justify-center text-xl font-bold hover:bg-[#B36C25] active:scale-95 transition-all cursor-pointer"
-                  aria-label="Decrease quantity"
-                >
-                  −
-                </button>
-                <span className="text-[#2E170C] font-bold text-lg min-w-[28px] text-center font-sans select-none">
-                  {quantity.toString().padStart(2, '0')}
+            {/* Price, Quantity, and Buy Button (beside each other on mobile, stacked on desktop with NO wrapper container) */}
+            <div className="flex flex-row flex-wrap lg:flex-col items-center lg:items-start justify-between lg:justify-start gap-4 lg:gap-6 pt-1 w-full">
+              {/* Pricing */}
+              <div className="flex items-baseline gap-2 sm:gap-3">
+                <span className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#2E170C] font-sans tracking-tight">
+                  ${unitPrice.toFixed(2)}
                 </span>
-                <button
-                  onClick={() => setQuantity((prev) => prev + 1)}
-                  className="w-8 h-8 rounded-full bg-[#C87D32] text-white flex items-center justify-center text-xl font-bold hover:bg-[#B36C25] active:scale-95 transition-all cursor-pointer"
-                  aria-label="Increase quantity"
-                >
-                  +
-                </button>
+                <span className="text-lg sm:text-xl lg:text-2xl text-[#8E7365] line-through font-sans">
+                  ${originalUnitPrice.toFixed(2)}
+                </span>
               </div>
 
-              <button
-                onClick={handleBuyMain}
-                className="bg-[#2E170C] text-white font-medium px-9 py-4 rounded-2xl hover:bg-[#1C0D06] active:translate-y-[1px] active:scale-[0.98] transition-all shadow-xl shadow-[#2E170C]/30 text-base sm:text-lg cursor-pointer flex items-center gap-2"
-              >
-                <span>Buy ${totalPrice}</span>
-              </button>
+              {/* Quantity selector and Buy button */}
+              <div className="flex items-center gap-3 sm:gap-4">
+                <div className="flex items-center bg-[#D6A068]/30 border border-[#C88846]/40 rounded-full px-3 py-1.5 gap-3 shadow-sm">
+                  <button
+                    onClick={() => setQuantity((prev) => Math.max(1, prev - 1))}
+                    className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#C87D32] text-white flex items-center justify-center text-lg sm:text-xl font-bold hover:bg-[#B36C25] active:scale-95 transition-all cursor-pointer"
+                    aria-label="Decrease quantity"
+                  >
+                    −
+                  </button>
+                  <span className="text-[#2E170C] font-bold text-base sm:text-lg min-w-[24px] sm:min-w-[28px] text-center font-sans select-none">
+                    {quantity.toString().padStart(2, '0')}
+                  </span>
+                  <button
+                    onClick={() => setQuantity((prev) => prev + 1)}
+                    className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#C87D32] text-white flex items-center justify-center text-lg sm:text-xl font-bold hover:bg-[#B36C25] active:scale-95 transition-all cursor-pointer"
+                    aria-label="Increase quantity"
+                  >
+                    +
+                  </button>
+                </div>
+
+                <button
+                  onClick={handleBuyMain}
+                  className="bg-[#2E170C] text-white font-medium px-6 sm:px-9 py-3 sm:py-4 rounded-2xl hover:bg-[#1C0D06] active:translate-y-[1px] active:scale-[0.98] transition-all shadow-xl shadow-[#2E170C]/30 text-sm sm:text-base lg:text-lg cursor-pointer flex items-center gap-2 whitespace-nowrap"
+                >
+                  <span>Buy ${totalPrice}</span>
+                </button>
+              </div>
             </div>
           </div>
 
