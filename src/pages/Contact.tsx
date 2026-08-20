@@ -108,7 +108,7 @@ export function Contact() {
                 <EmailIcon className="mt-1 h-6 w-6 text-accent" />
                 <div>
                   <h3 className="font-bold text-primary">Email Us</h3>
-                  <p className="mt-1 text-sm text-primary-muted">hello@brewandbean.com</p>
+                  <p className="mt-1 text-sm text-primary-muted">hello@cafelibre.com</p>
                 </div>
               </div>
             </div>

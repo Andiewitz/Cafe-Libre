@@ -141,14 +141,14 @@ export function Footer() {
             <Link
               to="/"
               className="flex items-center gap-3 group select-none"
-              aria-label="Brew Pod Coffee House Home"
+              aria-label="Café Libre Coffee House Home"
             >
               <div className="w-11 h-11 rounded-full bg-[#1A0C05] border-2 border-[#C87D32] shadow-md flex items-center justify-center text-[#FAF2EA] transition-all group-hover:scale-105 group-hover:border-[#E59E53]">
                 <MaterialSymbol name="local_cafe" filled className="text-2xl text-[#D6A068]" />
               </div>
               <div>
                 <span className="font-hero text-2xl tracking-wide text-[#FAF2EA] block leading-none">
-                  Brew Pod
+                  Café Libre
                 </span>
                 <span className="text-[9px] uppercase tracking-widest text-[#D6A068] font-bold block mt-1">
                   Artisanal Coffee House
@@ -162,11 +162,11 @@ export function Footer() {
 
             <div className="pt-2 flex flex-col gap-2 text-xs sm:text-sm text-[#D6A068]">
               <a
-                href="mailto:hello@brewpodcoffee.com"
+                href="mailto:hello@cafelibre.com"
                 className="inline-flex items-center gap-2 text-[#EFE2D4] hover:text-[#D6A068] transition-colors"
               >
                 <MaterialSymbol name="mail" className="text-base text-[#C87D32]" />
-                <span>hello@brewpodcoffee.com</span>
+                <span>hello@cafelibre.com</span>
               </a>
               <a
                 href="tel:5035550123"
@@ -266,7 +266,7 @@ export function Footer() {
 
         {/* Bottom Bar: Copyright & Working Legal Dialog Links */}
         <div className="mt-14 pt-8 border-t border-[#3E2113]/80 flex flex-col sm:flex-row items-center justify-between text-xs text-[#8E7365] gap-4">
-          <p>© 2026 Brew Pod Artisanal Coffee Co. All rights reserved.</p>
+          <p>© 2026 Café Libre Artisanal Coffee Co. All rights reserved.</p>
           
           <div className="flex items-center gap-6">
             <button
@@ -293,7 +293,7 @@ export function Footer() {
         <div className="space-y-4 text-sm text-[#2E170C]">
           <h3 className="font-hero text-2xl text-[#2E170C]">Privacy Policy</h3>
           <p className="text-[#5D4233]">
-            At Brew Pod, your privacy is deeply respected. We only collect the essential information required to fulfill your coffee orders, manage reward points, and deliver subscription newsletters.
+            At Café Libre, your privacy is deeply respected. We only collect the essential information required to fulfill your coffee orders, manage reward points, and deliver subscription newsletters.
           </p>
           <div className="space-y-2 text-[#5D4233]">
             <h4 className="font-bold text-[#2E170C]">1. Data Collection</h4>
@@ -301,7 +301,7 @@ export function Footer() {
             <h4 className="font-bold text-[#2E170C]">2. Payment Security</h4>
             <p>All in-person and digital transactions are encrypted via PCI-compliant industry standard payment gateways.</p>
             <h4 className="font-bold text-[#2E170C]">3. Contact</h4>
-            <p>For any privacy requests or inquiries, reach us anytime at privacy@brewpodcoffee.com.</p>
+            <p>For any privacy requests or inquiries, reach us anytime at privacy@cafelibre.com.</p>
           </div>
         </div>
       </Dialog>
@@ -311,7 +311,7 @@ export function Footer() {
         <div className="space-y-4 text-sm text-[#2E170C]">
           <h3 className="font-hero text-2xl text-[#2E170C]">Terms of Service</h3>
           <p className="text-[#5D4233]">
-            Welcome to Brew Pod Artisanal Coffee House. By placing an order or using our digital services, you agree to our standard terms.
+            Welcome to Café Libre Artisanal Coffee House. By placing an order or using our digital services, you agree to our standard terms.
           </p>
           <div className="space-y-2 text-[#5D4233]">
             <h4 className="font-bold text-[#2E170C]">1. Artisanal Freshness Guarantee</h4>
@@ -319,7 +319,7 @@ export function Footer() {
             <h4 className="font-bold text-[#2E170C]">2. Cafe Pickup & Orders</h4>
             <p>Fresh espresso drinks and pour-overs are prepared fresh upon your designated pickup window.</p>
             <h4 className="font-bold text-[#2E170C]">3. Customer Support</h4>
-            <p>Reach out to support@brewpodcoffee.com for order changes, returns, or roast consultations.</p>
+            <p>Reach out to support@cafelibre.com for order changes, returns, or roast consultations.</p>
           </div>
         </div>
       </Dialog>

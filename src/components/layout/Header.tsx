@@ -57,14 +57,14 @@ export function Header() {
           <Link
             to="/"
             className="relative -my-3 sm:-my-4 shrink-0 group flex items-center justify-center select-none"
-            aria-label="Brew Pod Coffee House Home"
+            aria-label="Café Libre Coffee House Home"
           >
             <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#1A0C05] border-2 border-[#C87D32] shadow-[0_6px_16px_rgba(0,0,0,0.7)] flex flex-col items-center justify-center p-1 relative overflow-hidden transition-all duration-300 group-hover:scale-105 group-hover:border-[#E59E53] group-hover:shadow-[0_8px_20px_rgba(200,125,50,0.35)]">
               {/* Inner dashed accent ring */}
               <div className="absolute inset-1 rounded-full border border-dashed border-[#D6A068]/35 pointer-events-none" />
 
               <span className="text-[6.5px] sm:text-[7px] font-bold tracking-widest text-[#D6A068] uppercase -mb-0.5 font-sans leading-none">
-                BREW POD
+                CAFÉ LIBRE
               </span>
 
               {/* Coffee Cup Icon */}
@@ -212,23 +212,23 @@ export function Header() {
       <Dialog
         open={mobileMenuOpen}
         onOpenChange={setMobileMenuOpen}
-        title="Brew Pod Navigation Menu"
+        title="Café Libre Navigation Menu"
       >
         <div className="flex flex-col gap-6 pt-4">
           {/* Mobile Badge */}
           <div className="flex items-center gap-3 pb-4 border-b border-[#3E2113]/10">
             <div className="w-12 h-12 rounded-full bg-[#1A0C05] border-2 border-[#C87D32] flex flex-col items-center justify-center p-1">
-              <span className="text-[5.5px] font-bold tracking-widest text-[#D6A068] uppercase">
-                BREW POD
+              <span className="text-[5px] font-bold tracking-widest text-[#D6A068] uppercase leading-none">
+                CAFÉ LIBRE
               </span>
               <MaterialSymbol name="local_cafe" className="text-base text-[#FAF2EA]" />
-              <span className="text-[5px] font-bold tracking-wider text-[#D6A068] uppercase">
+              <span className="text-[4.5px] font-bold tracking-wider text-[#D6A068] uppercase leading-none">
                 COFFEE
               </span>
             </div>
             <div>
-              <p className="font-bold text-[#2E170C] text-base">Brew Pod House</p>
-              <p className="text-xs text-[#7A5B4C]">Artisan Coffee & Reserve</p>
+              <p className="font-bold text-[#2E170C] text-base">Café Libre</p>
+              <p className="text-xs text-[#7A5B4C]">Artisanal Coffee & Reserve</p>
             </div>
           </div>
 

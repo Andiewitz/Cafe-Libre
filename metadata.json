@@ -1,6 +1,6 @@
 {
-  "name": "Café Aura",
-  "description": "Artisan coffee shop website with handcrafted blends, specialty menu, stories, and location locator.",
+  "name": "Café Libre",
+  "description": "Artisanal coffee house website with handcrafted single-origin blends, specialty menu, stories, and roastery locator.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

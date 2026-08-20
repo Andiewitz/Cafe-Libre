@@ -113,7 +113,7 @@ export function Location() {
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Brew & Bean Coffee Shop location"
+              title="Café Libre Coffee House location"
             />
           </motion.div>
         </div>

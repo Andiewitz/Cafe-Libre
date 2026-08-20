@@ -33,7 +33,7 @@ export function About() {
               {
                 year: '2019',
                 title: 'The Beginning',
-                desc: 'Brew & Bean opened its first location as a small kiosk with a dream.',
+                desc: 'Café Libre opened its first location as a small kiosk with a dream.',
               },
               {
                 year: '2021',
@@ -93,7 +93,7 @@ export function About() {
         >
           <h2 className="font-display text-center text-2xl font-bold text-primary">Our Mission</h2>
           <p className="mx-auto mt-4 max-w-3xl text-center text-primary-muted">
-            At Brew & Bean, we believe great coffee should be accessible, ethical, and
+            At Café Libre, we believe great coffee should be accessible, ethical, and
             community-driven. Every bean we source supports small farmers, every cup we brew tells a
             story, and every corner of our shop invites you to slow down and savor.
           </p>

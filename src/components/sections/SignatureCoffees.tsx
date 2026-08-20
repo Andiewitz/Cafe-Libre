@@ -194,8 +194,8 @@ export function SignatureCoffees() {
       <div className="max-w-[1240px] mx-auto px-5 sm:px-8 md:px-16 relative z-10 pt-8 sm:pt-14 md:pt-16">
         {/* Main Split Section */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center mb-20 md:mb-28">
-          {/* Left Column: Product info & pricing */}
-          <div className="lg:col-span-5 xl:col-span-5 flex flex-col items-start space-y-6">
+          {/* Left Column: Product info & pricing (order-2 on small screens, order-1 on desktop) */}
+          <div className="order-2 lg:order-1 lg:col-span-5 xl:col-span-5 flex flex-col items-start space-y-6">
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeSlide}
@@ -256,8 +256,8 @@ export function SignatureCoffees() {
             </div>
           </div>
 
-          {/* Right Column: Enlarged Dark Brown Wedge/Triangle SVG + Large Cold Brew Cup */}
-          <div className="lg:col-span-7 xl:col-span-7 relative flex justify-center items-center pt-20 sm:pt-28 lg:pt-12">
+          {/* Right Column: 3-picture Carousel Slider & Cup (order-1 on small screens, order-2 on desktop) */}
+          <div className="order-1 lg:order-2 lg:col-span-7 xl:col-span-7 relative flex justify-center items-center pt-2 sm:pt-4 lg:pt-12">
             <div className="relative w-full max-w-[620px]">
               {/* Enlarged SVG Curved Wedge / Soft Triangle Container */}
               <svg
