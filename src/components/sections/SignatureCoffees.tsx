@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { MaterialSymbol } from '@/components/ui/MaterialSymbol'
 import coldBrewCup from '@/assets/images/cold-brew-cup.png'
 import blackAmericanoImg from '@/assets/images/black-americano.png'
 import cappuccinoSlideImg from '@/assets/images/capuccino.png'
-import coffeeBeansBag from '@/assets/images/coffee-beans-bag.jpg'
-import heroEspressoSplash from '@/assets/images/hero-espresso-splash.jpg'
-import latteImg from '@/assets/images/latte.jpg'
-import cappuccinoImg from '@/assets/images/cappuccino.jpg'
+import sierraBlendImg from '@/assets/images/sierra-blend.png'
+import highlandMistImg from '@/assets/images/highland-mist-blend.png'
+import velvetVanillaMochaImg from '@/assets/images/velvet-vanila-mocha.png'
 
 interface BrewSlide {
   title: string
@@ -91,10 +91,9 @@ export function SignatureCoffees() {
       coldBrewCup,
       blackAmericanoImg,
       cappuccinoSlideImg,
-      heroEspressoSplash,
-      latteImg,
-      coffeeBeansBag,
-      cappuccinoImg,
+      sierraBlendImg,
+      highlandMistImg,
+      velvetVanillaMochaImg,
     ]
 
     imagesToPreload.forEach((src) => {
@@ -130,25 +129,25 @@ export function SignatureCoffees() {
 
   const products = [
     {
-      id: 'vanilla-bliss',
-      name: 'Vanilla Blossom',
-      type: 'Madagascar Vanilla Light Roast',
-      price: '$13.49',
-      image: latteImg,
+      id: 'sierra-blend',
+      name: 'Sierra Blend',
+      type: 'High-Altitude Mountain Roast',
+      price: '$14.99',
+      image: sierraBlendImg,
     },
     {
-      id: 'medium-roast',
-      name: 'Huila Sunrise Estate',
-      type: 'Colombian Single-Origin Medium',
-      price: '$11.49',
-      image: coffeeBeansBag,
+      id: 'highland-mist',
+      name: 'Highland Mist Blend',
+      type: 'Single-Origin Medium-Light',
+      price: '$15.49',
+      image: highlandMistImg,
     },
     {
-      id: 'intense-roast',
-      name: 'Midnight Crema',
-      type: 'Italian Dark Espresso Roast',
-      price: '$12.49',
-      image: cappuccinoImg,
+      id: 'velvet-vanilla-mocha',
+      name: 'Velvet Vanilla Mocha',
+      type: 'Artisanal Infused Dark Blend',
+      price: '$16.29',
+      image: velvetVanillaMochaImg,
     },
   ]
 
@@ -380,59 +379,87 @@ export function SignatureCoffees() {
           </div>
         </div>
 
-        {/* Bottom Product Picks: 3 Cards with dark brown bases */}
-        <div className="mt-8">
-          <h3 className="font-hero text-3xl sm:text-4xl text-center text-[#2E170C] mb-12">
+        {/* Bottom Product Picks: 3 Miniature Brown Shapes with Floating Coffee Bags (No outer box container) */}
+        <div className="mt-20 sm:mt-28 md:mt-32">
+          <h3 className="font-hero text-3xl sm:text-4xl text-center text-[#2E170C] mb-20 sm:mb-28">
             Featured Packaged Blends
           </h3>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 sm:gap-8 max-w-[960px] mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-20 sm:gap-16 lg:gap-8 max-w-[1060px] mx-auto">
             {products.map((item) => {
               const isAdded = !!addedItems[item.id]
               return (
-                <div key={item.id} className="relative flex flex-col items-center group">
-                  {/* Coffee Package Artwork protruding from the card */}
-                  <div className="relative z-10 -mb-7 w-36 h-40 sm:w-40 sm:h-44 rounded-2xl overflow-hidden shadow-xl border-2 border-white/90 bg-white group-hover:-translate-y-1 transition-transform duration-300">
-                    <img
-                      src={item.image}
-                      alt={item.name}
-                      className="w-full h-full object-cover"
-                      loading="lazy"
-                    />
-                  </div>
-
-                  {/* Dark Brown Card Podium Base */}
-                  <div className="bg-[#2E170C] rounded-2xl w-full pt-12 pb-7 px-5 text-center shadow-xl flex flex-col items-center border border-[#3D2010]">
-                    <h4 className="font-semibold text-white text-lg tracking-wide">{item.name}</h4>
-                    <p className="text-xs text-[#D6A068]/80 mt-0.5">{item.type}</p>
-                    <p className="text-[#E6A868] font-bold text-lg mt-2">{item.price}</p>
-
-                    {/* Floating Add to Cart Button */}
-                    <button
-                      onClick={() => handleAddToCart(item.id)}
-                      className={`mt-3.5 w-10 h-10 rounded-xl flex items-center justify-center shadow-lg transition-all cursor-pointer active:scale-95 ${
-                        isAdded
-                          ? 'bg-green-600 text-white'
-                          : 'bg-white text-[#2E170C] hover:bg-[#FAF2EA] hover:scale-105'
-                      }`}
-                      aria-label={`Add ${item.name} to cart`}
+                <div
+                  key={item.id}
+                  className="relative flex flex-col items-center group w-full max-w-[320px] mx-auto"
+                >
+                  {/* Miniature Brown Shape Container */}
+                  <div className="relative w-full">
+                    {/* Taller Miniature Brown Curved Wedge SVG */}
+                    <svg
+                      viewBox="0 0 620 500"
+                      className="w-full h-auto drop-shadow-[0_18px_25px_rgba(46,23,12,0.22)] group-hover:drop-shadow-[0_24px_32px_rgba(46,23,12,0.32)] transition-all duration-300"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
                     >
-                      {isAdded ? (
-                        <span className="font-bold text-sm">✓</span>
-                      ) : (
-                        <svg
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          className="w-4 h-4"
+                      <path
+                        d="M 50 480 L 560 480 Q 600 480 600 440 L 600 70 Q 600 20 550 35 L 55 195 Q 20 210 20 250 L 20 440 Q 20 480 50 480 Z"
+                        fill="#2E170C"
+                      />
+                      <path
+                        d="M 50 480 L 560 480 Q 600 480 600 440 L 600 70 Q 600 20 550 35 L 55 195 Q 20 210 20 250 L 20 440 Q 20 480 50 480 Z"
+                        stroke="#4A2818"
+                        strokeWidth="2"
+                      />
+                    </svg>
+
+                    {/* Floating Coffee Bag (Uniform position and sizing across all three cards) */}
+                    <div className="absolute -top-[62px] sm:-top-[74px] md:-top-[86px] inset-x-0 flex justify-center z-10 pointer-events-none">
+                      <img
+                        src={item.image}
+                        alt={item.name}
+                        className="w-[61%] sm:w-[63%] max-w-[196px] h-auto object-contain drop-shadow-[0_18px_24px_rgba(0,0,0,0.6)] group-hover:scale-105 group-hover:-translate-y-2 transition-all duration-300"
+                        loading="lazy"
+                      />
+                    </div>
+
+                    {/* Lower Details inside the taller miniature brown shape */}
+                    <div className="absolute bottom-5 sm:bottom-6 md:bottom-7 inset-x-0 px-4 sm:px-6 text-center flex flex-col items-center z-20">
+                      <h4 className="font-hero text-base sm:text-lg lg:text-xl text-[#FAF2EA] tracking-wide leading-tight line-clamp-1">
+                        {item.name}
+                      </h4>
+                      <p className="text-xs text-[#D6A068] font-sans font-medium mt-1 line-clamp-1">
+                        {item.type}
+                      </p>
+
+                      <div className="flex items-center justify-between w-full max-w-[210px] mt-3 pt-2.5 border-t border-[#4A2818]/70">
+                        <span className="text-[#FAF2EA] font-bold text-base sm:text-lg font-sans">
+                          {item.price}
+                        </span>
+
+                        <button
+                          onClick={() => handleAddToCart(item.id)}
+                          className={`px-3.5 py-1.5 rounded-full flex items-center gap-1.5 text-xs font-semibold shadow-md transition-all cursor-pointer active:scale-95 ${
+                            isAdded
+                              ? 'bg-green-600 text-white'
+                              : 'bg-[#C87D32] hover:bg-[#D2691E] text-white'
+                          }`}
+                          aria-label={`Add ${item.name} to cart`}
                         >
-                          <circle cx="9" cy="21" r="1" />
-                          <circle cx="20" cy="21" r="1" />
-                          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
-                        </svg>
-                      )}
-                    </button>
+                          {isAdded ? (
+                            <>
+                              <span className="text-xs">✓</span>
+                              <span>Added</span>
+                            </>
+                          ) : (
+                            <>
+                              <MaterialSymbol name="shopping_bag" className="text-sm" />
+                              <span>Add</span>
+                            </>
+                          )}
+                        </button>
+                      </div>
+                    </div>
                   </div>
                 </div>
               )
