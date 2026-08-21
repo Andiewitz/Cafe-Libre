@@ -94,18 +94,24 @@ export function Hero() {
                 alt="Barista portrait"
                 className="w-12 h-12 rounded-full border-2 border-background object-cover"
                 loading="lazy"
+                decoding="async"
+                referrerPolicy="no-referrer"
               />
               <img
                 src={avatarCustomer}
                 alt="Customer enjoying coffee"
                 className="w-12 h-12 rounded-full border-2 border-background object-cover"
                 loading="lazy"
+                decoding="async"
+                referrerPolicy="no-referrer"
               />
               <img
                 src={avatarHands}
                 alt="Hands holding coffee mug"
                 className="w-12 h-12 rounded-full border-2 border-background object-cover"
                 loading="lazy"
+                decoding="async"
+                referrerPolicy="no-referrer"
               />
               <div className="w-12 h-12 rounded-full border-2 border-background bg-surface-container-high flex items-center justify-center text-xs font-label-md text-primary">
                 +2k

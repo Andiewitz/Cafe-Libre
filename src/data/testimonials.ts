@@ -1,6 +1,6 @@
-import testimonial1 from '@/assets/images/testimonial-1.jpg'
-import testimonial2 from '@/assets/images/testimonial-2.jpg'
-import testimonial3 from '@/assets/images/testimonial-3.jpg'
+import testimonial1 from '@/assets/images/customer_elena_1787319696962.jpg'
+import testimonial2 from '@/assets/images/customer_marcus_1787319713627.jpg'
+import testimonial3 from '@/assets/images/customer_sophia_1787319729205.jpg'
 import avatarCustomer from '@/assets/images/avatar-customer.jpg'
 import avatarBarista from '@/assets/images/avatar-barista.jpg'
 

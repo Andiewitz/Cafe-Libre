@@ -6,9 +6,9 @@ import { MaterialSymbol } from '@/components/ui/MaterialSymbol'
 // Asset imports
 import shopInteriorBanner from '@/assets/images/cafe_shop_interior_banner_1787318805983.jpg'
 import avatarBarista from '@/assets/images/avatar-barista.jpg'
-import coffeeBeans from '@/assets/images/coffee-beans.jpg'
-import latteArt from '@/assets/images/latte.jpg'
-import freshCroissant from '@/assets/images/croissant.jpg'
+import coffeeBeans from '@/assets/images/roasted_beans_1787319635869.jpg'
+import latteArt from '@/assets/images/latte_art_1787319478031.jpg'
+import freshCroissant from '@/assets/images/flaky_croissant_1787319588977.jpg'
 
 export function About() {
   return (
@@ -26,6 +26,9 @@ export function About() {
           <img
             src={shopInteriorBanner}
             alt="Café Libre Shop Interior"
+            loading="eager"
+            decoding="async"
+            referrerPolicy="no-referrer"
             className="w-full h-full object-cover object-center"
           />
 
@@ -83,6 +86,9 @@ export function About() {
               <img
                 src={avatarBarista}
                 alt="Head Barista"
+                loading="lazy"
+                decoding="async"
+                referrerPolicy="no-referrer"
                 className="w-11 h-11 rounded-full object-cover border border-[#E8DCD0]"
               />
               <div>
@@ -109,6 +115,9 @@ export function About() {
                   <img
                     src={coffeeBeans}
                     alt="Freshly roasted whole beans"
+                    loading="lazy"
+                    decoding="async"
+                    referrerPolicy="no-referrer"
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                   />
                 </div>
@@ -121,6 +130,9 @@ export function About() {
                   <img
                     src={latteArt}
                     alt="Precision latte pour"
+                    loading="lazy"
+                    decoding="async"
+                    referrerPolicy="no-referrer"
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                   />
                 </div>
@@ -133,6 +145,9 @@ export function About() {
                   <img
                     src={freshCroissant}
                     alt="Fresh baked pastry"
+                    loading="lazy"
+                    decoding="async"
+                    referrerPolicy="no-referrer"
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                   />
                 </div>

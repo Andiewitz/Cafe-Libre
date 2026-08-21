@@ -59,7 +59,14 @@ export function MenuCard({
             src={image}
             alt={name}
             loading="lazy"
+            decoding="async"
             referrerPolicy="no-referrer"
+            onError={(e) => {
+              const target = e.currentTarget
+              target.onerror = null
+              target.src = ''
+              target.style.display = 'none'
+            }}
             className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
           />
         ) : (

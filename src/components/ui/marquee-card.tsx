@@ -14,6 +14,9 @@ export const MarqueeCard = () => {
                 <img
                   src={testimonial.avatar || "/placeholder.svg"}
                   alt={testimonial.name}
+                  loading="lazy"
+                  decoding="async"
+                  referrerPolicy="no-referrer"
                   className="h-10 w-10 object-cover rounded-full"
                 />
                 <div>

@@ -1,6 +1,6 @@
-import team1 from '@/assets/images/team-1.jpg'
-import team2 from '@/assets/images/team-2.jpg'
-import team3 from '@/assets/images/team-3.jpg'
+import team1 from '@/assets/images/team_alex_1787319652663.jpg'
+import team2 from '@/assets/images/team_maya_1787319668417.jpg'
+import team3 from '@/assets/images/team_derek_1787319682470.jpg'
 
 export type TeamMember = {
   id: string

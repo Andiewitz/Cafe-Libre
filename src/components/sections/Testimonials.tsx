@@ -113,6 +113,12 @@ export function Testimonials() {
                         alt={testimonial.name}
                         className="w-11 h-11 rounded-full object-cover border border-[#E0D0C0]"
                         loading="lazy"
+                        decoding="async"
+                        referrerPolicy="no-referrer"
+                        onError={(e) => {
+                          const target = e.currentTarget
+                          target.style.opacity = '0.5'
+                        }}
                       />
                       <div>
                         <h3 className="font-sans font-bold text-sm text-[#2E170C] leading-snug">
