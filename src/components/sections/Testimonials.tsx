@@ -43,10 +43,10 @@ export function Testimonials() {
       <div className="max-w-[1240px] mx-auto px-5 sm:px-8 md:px-16 relative z-10 mb-8 sm:mb-12">
         {/* Section Header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 28 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="flex flex-col sm:flex-row sm:items-end justify-between gap-4"
         >
           <div>
@@ -66,18 +66,30 @@ export function Testimonials() {
           </div>
 
           {/* Google Reviews rating snippet */}
-          <div className="flex items-center gap-2.5 px-4 py-2 rounded-2xl bg-white/80 border border-[#E4D5C7] shadow-sm self-start sm:self-auto">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            className="flex items-center gap-2.5 px-4 py-2 rounded-2xl bg-white/80 border border-[#E4D5C7] shadow-sm self-start sm:self-auto"
+          >
             <GoogleIcon className="w-5 h-5 shrink-0" />
             <div className="text-xs font-sans text-[#2E170C]">
               <span className="font-bold text-sm mr-1">4.9</span>
               <span className="text-[#8E7365]">rating on Google Maps</span>
             </div>
-          </div>
+          </motion.div>
         </motion.div>
       </div>
 
       {/* Row Carousel Marquee */}
-      <div className="w-full relative">
+      <motion.div
+        initial={{ opacity: 0, y: 35 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.9, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+        className="w-full relative"
+      >
         {/* Soft edge fade overlays */}
         <div className="absolute left-0 top-0 bottom-0 w-12 sm:w-24 bg-gradient-to-r from-[#F6EDE2] to-transparent z-10 pointer-events-none" />
         <div className="absolute right-0 top-0 bottom-0 w-12 sm:w-24 bg-gradient-to-l from-[#F6EDE2] to-transparent z-10 pointer-events-none" />
@@ -155,7 +167,7 @@ export function Testimonials() {
             )
           })}
         </Marquee>
-      </div>
+      </motion.div>
     </section>
   )
 }

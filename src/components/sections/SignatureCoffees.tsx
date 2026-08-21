@@ -194,7 +194,13 @@ export function SignatureCoffees() {
         {/* Main Split Section */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center mb-20 md:mb-28">
           {/* Left Column: Product info & pricing (order-2 on small screens, order-1 on desktop) */}
-          <div className="order-2 lg:order-1 lg:col-span-5 xl:col-span-5 flex flex-col items-start space-y-6">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="order-2 lg:order-1 lg:col-span-5 xl:col-span-5 flex flex-col items-start space-y-6"
+          >
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeSlide}
@@ -256,10 +262,16 @@ export function SignatureCoffees() {
                 </button>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Right Column: 3-picture Carousel Slider & Cup (order-1 on small screens, order-2 on desktop) */}
-          <div className="order-1 lg:order-2 lg:col-span-7 xl:col-span-7 relative flex justify-center items-center pt-2 sm:pt-4 lg:pt-12">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.92, y: 30 }}
+            whileInView={{ opacity: 1, scale: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+            className="order-1 lg:order-2 lg:col-span-7 xl:col-span-7 relative flex justify-center items-center pt-2 sm:pt-4 lg:pt-12"
+          >
             <div className="relative w-full max-w-[620px]">
               {/* Enlarged SVG Curved Wedge / Soft Triangle Container */}
               <svg
@@ -376,21 +388,35 @@ export function SignatureCoffees() {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
 
         {/* Bottom Product Picks: 3 Miniature Brown Shapes with Floating Coffee Bags (No outer box container) */}
         <div className="mt-20 sm:mt-28 md:mt-32">
-          <h3 className="font-hero text-3xl sm:text-4xl text-center text-[#2E170C] mb-20 sm:mb-28">
+          <motion.h3
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+            className="font-hero text-3xl sm:text-4xl text-center text-[#2E170C] mb-20 sm:mb-28"
+          >
             Featured Packaged Blends
-          </h3>
+          </motion.h3>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-20 sm:gap-16 lg:gap-8 max-w-[1060px] mx-auto">
-            {products.map((item) => {
+            {products.map((item, idx) => {
               const isAdded = !!addedItems[item.id]
               return (
-                <div
+                <motion.div
                   key={item.id}
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{
+                    duration: 0.7,
+                    delay: idx * 0.15,
+                    ease: [0.16, 1, 0.3, 1],
+                  }}
                   className="relative flex flex-col items-center group w-full max-w-[320px] mx-auto"
                 >
                   {/* Miniature Brown Shape Container */}
@@ -461,7 +487,7 @@ export function SignatureCoffees() {
                       </div>
                     </div>
                   </div>
-                </div>
+                </motion.div>
               )
             })}
           </div>

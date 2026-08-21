@@ -135,7 +135,13 @@ export function Footer() {
 
       {/* Main Footer Navigation & Brand Section */}
       <div className="max-w-[1200px] mx-auto px-5 sm:px-8 md:px-16 py-14 sm:py-16 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 lg:gap-12 items-start">
+        <motion.div
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          className="grid grid-cols-1 md:grid-cols-12 gap-10 lg:gap-12 items-start"
+        >
           {/* Brand Column */}
           <div className="md:col-span-5 flex flex-col items-start space-y-4">
             <Link
@@ -262,7 +268,7 @@ export function Footer() {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Bottom Bar: Copyright & Working Legal Dialog Links */}
         <div className="mt-14 pt-8 border-t border-[#3E2113]/80 flex flex-col sm:flex-row items-center justify-between text-xs text-[#8E7365] gap-4">
