@@ -43,6 +43,16 @@ export function Location() {
                     <br />
                     United States
                   </p>
+                  <div className="mt-2.5">
+                    <a
+                      href="https://maps.google.com/?q=123+Coffee+Street,+Portland,+OR+97201"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#C87D32] hover:text-[#210E0B] transition-colors"
+                    >
+                      <span>Open in Google Maps →</span>
+                    </a>
+                  </div>
                 </div>
               </div>
 

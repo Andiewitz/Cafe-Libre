@@ -5,6 +5,12 @@ import { Dialog } from '@/components/ui/Dialog'
 import { MaterialSymbol } from '@/components/ui/MaterialSymbol'
 import { cn } from '@/utils/cn'
 
+interface NavItem {
+  label: string
+  href: string
+  isExternal?: boolean
+}
+
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [searchOpen, setSearchOpen] = useState(false)
@@ -12,15 +18,18 @@ export function Header() {
   const [cartToast, setCartToast] = useState(false)
   const location = useLocation()
 
-  const leftNavItems = [
+  const leftNavItems: NavItem[] = [
     { label: 'HOME', href: '/' },
-    { label: 'REWARDS', href: '/menu#rewards' },
-    { label: 'GIFT CARDS', href: '/about#gift-cards' },
+    { label: 'ABOUT', href: '/about' },
   ]
 
-  const rightNavItems = [
+  const rightNavItems: NavItem[] = [
     { label: 'MENU', href: '/menu' },
-    { label: 'DELIVERY', href: '/location' },
+    {
+      label: 'VISIT US',
+      href: 'https://maps.google.com/?q=123+Coffee+Street,+Portland,+OR+97201',
+      isExternal: true,
+    },
   ]
 
   const handleCartClick = () => {
@@ -120,17 +129,29 @@ export function Header() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5, delay: 0.2 + idx * 0.08 }}
                   >
-                    <Link
-                      to={item.href}
-                      className={cn(
-                        'font-sans text-[11px] lg:text-xs font-semibold tracking-wider transition-colors duration-150',
-                        isActive
-                          ? 'text-[#D6A068]'
-                          : 'text-[#EFE2D4]/90 hover:text-[#D6A068]',
-                      )}
-                    >
-                      {item.label}
-                    </Link>
+                    {item.isExternal ? (
+                      <a
+                        href={item.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-sans text-[11px] lg:text-xs font-semibold tracking-wider transition-colors duration-150 text-[#EFE2D4]/90 hover:text-[#D6A068] flex items-center gap-1"
+                      >
+                        {item.label}
+                        <MaterialSymbol name="north_east" className="text-[12px] opacity-70" />
+                      </a>
+                    ) : (
+                      <Link
+                        to={item.href}
+                        className={cn(
+                          'font-sans text-[11px] lg:text-xs font-semibold tracking-wider transition-colors duration-150',
+                          isActive
+                            ? 'text-[#D6A068]'
+                            : 'text-[#EFE2D4]/90 hover:text-[#D6A068]',
+                        )}
+                      >
+                        {item.label}
+                      </Link>
+                    )}
                   </motion.div>
                 )
               })}
@@ -274,13 +295,26 @@ export function Header() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: index * 0.05 }}
               >
-                <Link
-                  to={item.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="block text-lg font-medium text-[#2E170C] hover:text-[#C87D32] transition-colors py-1"
-                >
-                  {item.label}
-                </Link>
+                {item.isExternal ? (
+                  <a
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="flex items-center justify-between text-lg font-medium text-[#2E170C] hover:text-[#C87D32] transition-colors py-1"
+                  >
+                    <span>{item.label}</span>
+                    <MaterialSymbol name="north_east" className="text-base text-[#8E7365]" />
+                  </a>
+                ) : (
+                  <Link
+                    to={item.href}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="block text-lg font-medium text-[#2E170C] hover:text-[#C87D32] transition-colors py-1"
+                  >
+                    {item.label}
+                  </Link>
+                )}
               </motion.div>
             ))}
           </nav>

@@ -28,8 +28,8 @@ const faqs = [
   },
   {
     id: '2',
-    q: 'Do you offer gift cards?',
-    a: 'Yes! Digital gift cards are available in any amount on our website.',
+    q: 'Where can I visit Café Libre in person?',
+    a: 'Our flagship coffee roastery is located at 123 Coffee Street in Portland’s Pearl District. You can open directions anytime via Google Maps.',
   },
   {
     id: '3',

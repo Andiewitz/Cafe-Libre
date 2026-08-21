@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { MaterialSymbol } from '@/components/ui/MaterialSymbol'
 import newHeroImage from '@/assets/images/new-hero-image.webp'
@@ -71,12 +70,15 @@ export function Hero() {
               Explore Blends
               <MaterialSymbol name="arrow_forward" />
             </a>
-            <Link
-              to="/location"
+            <a
+              href="https://maps.google.com/?q=123+Coffee+Street,+Portland,+OR+97201"
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-surface text-secondary border border-secondary/30 font-label-md px-8 py-4 rounded-full hover:border-secondary transition-colors active:translate-y-[2px] flex items-center gap-2"
             >
-              Visit Us
-            </Link>
+              <span>Visit Us</span>
+              <MaterialSymbol name="location_on" className="text-base" />
+            </a>
           </motion.div>
 
           {/* Social proof / Reviews (z-50) */}

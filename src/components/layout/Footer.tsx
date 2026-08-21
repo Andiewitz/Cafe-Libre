@@ -272,9 +272,15 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link to="/menu" className="hover:text-[#FAF2EA] transition-colors">
-                  Rewards Program
-                </Link>
+                <a
+                  href="https://maps.google.com/?q=123+Coffee+Street,+Portland,+OR+97201"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-[#FAF2EA] transition-colors inline-flex items-center gap-1"
+                >
+                  <span>Visit Us (Google Maps)</span>
+                  <MaterialSymbol name="north_east" className="text-[12px] opacity-70" />
+                </a>
               </li>
             </ul>
           </div>
@@ -291,13 +297,15 @@ export function Footer() {
                 Portland, OR 97201
               </p>
               <div className="pt-2">
-                <Link
-                  to="/location"
+                <a
+                  href="https://maps.google.com/?q=123+Coffee+Street,+Portland,+OR+97201"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 text-xs text-[#D6A068] hover:text-white font-medium transition-colors"
                 >
-                  <span>Get Driving Directions</span>
-                  <MaterialSymbol name="arrow_forward" className="text-sm" />
-                </Link>
+                  <span>Visit Us on Google Maps</span>
+                  <MaterialSymbol name="north_east" className="text-xs" />
+                </a>
               </div>
             </div>
           </div>
@@ -332,7 +340,7 @@ export function Footer() {
         <div className="space-y-4 text-sm text-[#2E170C]">
           <h3 className="font-hero text-2xl text-[#2E170C]">Privacy Policy</h3>
           <p className="text-[#5D4233]">
-            At Café Libre, your privacy is deeply respected. We only collect the essential information required to fulfill your coffee orders, manage reward points, and deliver subscription newsletters.
+            At Café Libre, your privacy is deeply respected. We only collect the essential information required to fulfill your coffee orders, manage customer accounts, and deliver subscription newsletters.
           </p>
           <div className="space-y-2 text-[#5D4233]">
             <h4 className="font-bold text-[#2E170C]">1. Data Collection</h4>
