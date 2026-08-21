@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { MaterialSymbol } from '@/components/ui/MaterialSymbol'
-import coldBrewCup from '@/assets/images/cold-brew-cup.png'
-import blackAmericanoImg from '@/assets/images/black-americano.png'
-import cappuccinoSlideImg from '@/assets/images/capuccino.png'
-import sierraBlendImg from '@/assets/images/sierra-blend.png'
-import highlandMistImg from '@/assets/images/highland-mist-blend.png'
-import velvetVanillaMochaImg from '@/assets/images/velvet-vanila-mocha.png'
+import { TextEffect } from '@/components/ui/text-effect'
+import coldBrewCup from '@/assets/images/cold-brew-cup.webp'
+import blackAmericanoImg from '@/assets/images/black-americano.webp'
+import cappuccinoSlideImg from '@/assets/images/capuccino.webp'
+import sierraBlendImg from '@/assets/images/sierra-blend.webp'
+import highlandMistImg from '@/assets/images/highland-mist-blend.webp'
+import velvetVanillaMochaImg from '@/assets/images/velvet-vanila-mocha.webp'
 
 interface BrewSlide {
   title: string
@@ -201,24 +202,25 @@ export function SignatureCoffees() {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="order-2 lg:order-1 lg:col-span-5 xl:col-span-5 flex flex-col items-start space-y-6"
           >
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={activeSlide}
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -15 }}
-                transition={{ duration: 0.3 }}
-                className="space-y-4"
+            <div key={activeSlide} className="space-y-4">
+              <div className="font-hero text-4xl sm:text-5xl md:text-6xl lg:text-[4rem] text-[#2E170C] leading-[1.1] font-normal">
+                <TextEffect per="word" preset="slide" as="span" className="inline">
+                  {currentSlide.title}
+                </TextEffect>
+                <br />
+                <TextEffect per="word" preset="slide" delay={0.12} as="span" className="text-[#3D2010] inline">
+                  {currentSlide.subtitle}
+                </TextEffect>
+              </div>
+              <TextEffect
+                per="word"
+                preset="fade"
+                delay={0.2}
+                className="text-[#5D4233] text-base md:text-lg leading-relaxed max-w-md font-sans"
               >
-                <h2 className="font-hero text-4xl sm:text-5xl md:text-6xl lg:text-[4rem] text-[#2E170C] leading-[1.1] font-normal">
-                  {currentSlide.title} <br />
-                  <span className="text-[#3D2010]">{currentSlide.subtitle}</span>
-                </h2>
-                <p className="text-[#5D4233] text-base md:text-lg leading-relaxed max-w-md font-sans">
-                  {currentSlide.description}
-                </p>
-              </motion.div>
-            </AnimatePresence>
+                {currentSlide.description}
+              </TextEffect>
+            </div>
 
             {/* Price, Quantity, and Buy Button (beside each other on mobile, stacked on desktop with NO wrapper container) */}
             <div className="flex flex-row flex-wrap lg:flex-col items-center lg:items-start justify-between lg:justify-start gap-4 lg:gap-6 pt-1 w-full">
@@ -393,15 +395,16 @@ export function SignatureCoffees() {
 
         {/* Bottom Product Picks: 3 Miniature Brown Shapes with Floating Coffee Bags (No outer box container) */}
         <div className="mt-20 sm:mt-28 md:mt-32">
-          <motion.h3
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="font-hero text-3xl sm:text-4xl text-center text-[#2E170C] mb-20 sm:mb-28"
-          >
-            Featured Packaged Blends
-          </motion.h3>
+          <div className="text-center mb-20 sm:mb-28">
+            <TextEffect
+              as="h3"
+              per="word"
+              preset="slide"
+              className="font-hero text-3xl sm:text-4xl text-[#2E170C] inline-block"
+            >
+              Featured Packaged Blends
+            </TextEffect>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-20 sm:gap-16 lg:gap-8 max-w-[1060px] mx-auto">
             {products.map((item, idx) => {
