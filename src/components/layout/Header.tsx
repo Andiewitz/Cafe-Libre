@@ -30,69 +30,30 @@ export function Header() {
 
   return (
     <>
-      <header className="fixed top-4 sm:top-6 left-0 right-0 z-50 flex justify-center px-3 sm:px-6 pointer-events-none">
-        <div className="pointer-events-auto bg-[#231109] border border-[#3E2113] rounded-full shadow-[0_16px_36px_rgba(0,0,0,0.65)] px-4 sm:px-6 md:px-8 py-2 sm:py-2.5 flex items-center justify-between gap-3 sm:gap-6 md:gap-8 w-full max-w-[820px]">
+      <motion.header
+        initial={{ opacity: 0, y: -28 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+        className="fixed top-4 sm:top-6 left-0 right-0 z-50 flex justify-center px-3 sm:px-6 pointer-events-none"
+      >
+        <motion.div
+          initial={{ scale: 0.96, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+          className="pointer-events-auto bg-[#231109] border border-[#3E2113] rounded-full shadow-[0_16px_36px_rgba(0,0,0,0.65)] px-4 sm:px-6 md:px-8 py-2 sm:py-2.5 flex items-center justify-between gap-3 sm:gap-6 md:gap-8 w-full max-w-[820px]"
+        >
           {/* Left Navigation Links */}
           <nav className="hidden md:flex items-center gap-6 lg:gap-7">
-            {leftNavItems.map((item) => {
+            {leftNavItems.map((item, idx) => {
               const isActive = location.pathname === item.href
               return (
-                <Link
+                <motion.div
                   key={item.label}
-                  to={item.href}
-                  className={cn(
-                    'font-sans text-[11px] lg:text-xs font-semibold tracking-wider transition-colors duration-150',
-                    isActive
-                      ? 'text-[#D6A068]'
-                      : 'text-[#EFE2D4]/90 hover:text-[#D6A068]',
-                  )}
+                  initial={{ opacity: 0, x: -10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5, delay: 0.2 + idx * 0.08 }}
                 >
-                  {item.label}
-                </Link>
-              )
-            })}
-          </nav>
-
-          {/* Center Coffee House Badge Emblem */}
-          <Link
-            to="/"
-            className="relative -my-3 sm:-my-4 shrink-0 group flex items-center justify-center select-none"
-            aria-label="Café Libre Coffee House Home"
-          >
-            <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#1A0C05] border-2 border-[#C87D32] shadow-[0_6px_16px_rgba(0,0,0,0.7)] flex flex-col items-center justify-center p-1 relative overflow-hidden transition-all duration-300 group-hover:scale-105 group-hover:border-[#E59E53] group-hover:shadow-[0_8px_20px_rgba(200,125,50,0.35)]">
-              {/* Inner dashed accent ring */}
-              <div className="absolute inset-1 rounded-full border border-dashed border-[#D6A068]/35 pointer-events-none" />
-
-              <span className="text-[6.5px] sm:text-[7px] font-bold tracking-widest text-[#D6A068] uppercase -mb-0.5 font-sans leading-none">
-                CAFÉ LIBRE
-              </span>
-
-              {/* Coffee Cup Icon */}
-              <svg
-                viewBox="0 0 24 24"
-                className="w-5 h-5 sm:w-6 sm:h-6 text-[#FAF2EA] my-0.5 transition-transform group-hover:-translate-y-0.5"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.75"
-              >
-                <path d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z" />
-                <path d="M6 2v2M10 2v2M14 2v2" strokeLinecap="round" />
-              </svg>
-
-              <span className="text-[5.5px] sm:text-[6px] font-bold tracking-wider text-[#D6A068] uppercase -mt-0.5 font-sans leading-none">
-                COFFEE HOUSE
-              </span>
-            </div>
-          </Link>
-
-          {/* Right Navigation & Action Icons */}
-          <div className="flex items-center gap-4 sm:gap-6">
-            <nav className="hidden md:flex items-center gap-6 lg:gap-7">
-              {rightNavItems.map((item) => {
-                const isActive = location.pathname === item.href
-                return (
                   <Link
-                    key={item.label}
                     to={item.href}
                     className={cn(
                       'font-sans text-[11px] lg:text-xs font-semibold tracking-wider transition-colors duration-150',
@@ -103,12 +64,85 @@ export function Header() {
                   >
                     {item.label}
                   </Link>
+                </motion.div>
+              )
+            })}
+          </nav>
+
+          {/* Center Coffee House Badge Emblem */}
+          <motion.div
+            initial={{ scale: 0.8, opacity: 0, rotate: -6 }}
+            animate={{ scale: 1, opacity: 1, rotate: 0 }}
+            transition={{ duration: 0.7, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+            className="relative -my-3 sm:-my-4 shrink-0"
+          >
+            <Link
+              to="/"
+              className="group flex items-center justify-center select-none"
+              aria-label="Café Libre Coffee House Home"
+            >
+              <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#1A0C05] border-2 border-[#C87D32] shadow-[0_6px_16px_rgba(0,0,0,0.7)] flex flex-col items-center justify-center p-1 relative overflow-hidden transition-all duration-300 group-hover:scale-105 group-hover:border-[#E59E53] group-hover:shadow-[0_8px_20px_rgba(200,125,50,0.35)]">
+                {/* Inner dashed accent ring */}
+                <div className="absolute inset-1 rounded-full border border-dashed border-[#D6A068]/35 pointer-events-none" />
+
+                <span className="text-[6.5px] sm:text-[7px] font-bold tracking-widest text-[#D6A068] uppercase -mb-0.5 font-sans leading-none">
+                  CAFÉ LIBRE
+                </span>
+
+                {/* Coffee Cup Icon */}
+                <svg
+                  viewBox="0 0 24 24"
+                  className="w-5 h-5 sm:w-6 sm:h-6 text-[#FAF2EA] my-0.5 transition-transform group-hover:-translate-y-0.5"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.75"
+                >
+                  <path d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z" />
+                  <path d="M6 2v2M10 2v2M14 2v2" strokeLinecap="round" />
+                </svg>
+
+                <span className="text-[5.5px] sm:text-[6px] font-bold tracking-wider text-[#D6A068] uppercase -mt-0.5 font-sans leading-none">
+                  COFFEE HOUSE
+                </span>
+              </div>
+            </Link>
+          </motion.div>
+
+          {/* Right Navigation & Action Icons */}
+          <div className="flex items-center gap-4 sm:gap-6">
+            <nav className="hidden md:flex items-center gap-6 lg:gap-7">
+              {rightNavItems.map((item, idx) => {
+                const isActive = location.pathname === item.href
+                return (
+                  <motion.div
+                    key={item.label}
+                    initial={{ opacity: 0, x: 10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, delay: 0.2 + idx * 0.08 }}
+                  >
+                    <Link
+                      to={item.href}
+                      className={cn(
+                        'font-sans text-[11px] lg:text-xs font-semibold tracking-wider transition-colors duration-150',
+                        isActive
+                          ? 'text-[#D6A068]'
+                          : 'text-[#EFE2D4]/90 hover:text-[#D6A068]',
+                      )}
+                    >
+                      {item.label}
+                    </Link>
+                  </motion.div>
                 )
               })}
             </nav>
 
             {/* Action Icons */}
-            <div className="flex items-center gap-2.5 sm:gap-3 text-[#FAF2EA]">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.35 }}
+              className="flex items-center gap-2.5 sm:gap-3 text-[#FAF2EA]"
+            >
               {/* Search Button */}
               <button
                 onClick={() => setSearchOpen(true)}
@@ -139,10 +173,10 @@ export function Header() {
               >
                 <MaterialSymbol name="menu" className="text-2xl" />
               </button>
-            </div>
+            </motion.div>
           </div>
-        </div>
-      </header>
+        </motion.div>
+      </motion.header>
 
       {/* Cart Quick Toast */}
       <AnimatePresence>
