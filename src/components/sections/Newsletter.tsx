@@ -1,4 +1,5 @@
-import { motion } from 'framer-motion'
+import { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import { Container } from '@/components/layout/Container'
 import { EmailIcon } from '@/components/icons/IconSet'
 import { useForm } from 'react-hook-form'
@@ -13,6 +14,8 @@ const emailSchema = z.object({
 type EmailFormData = z.infer<typeof emailSchema>
 
 export function Newsletter() {
+  const [subscribed, setSubscribed] = useState(false)
+
   const {
     register,
     handleSubmit,
@@ -25,8 +28,9 @@ export function Newsletter() {
   const onSubmit = async (_data: EmailFormData) => {
     // Simulate API call
     await new Promise((resolve) => setTimeout(resolve, 800))
+    setSubscribed(true)
     reset()
-    alert('Thanks for subscribing! Check your email.')
+    setTimeout(() => setSubscribed(false), 5000)
   }
 
   return (
@@ -42,7 +46,7 @@ export function Newsletter() {
             <EmailIcon className="h-7 w-7 text-accent" />
           </div>
           <h2 className="font-display text-3xl font-bold">Stay in the Loop</h2>
-          <p className="mt-3 max-w-2xl text-cream/80">
+          <p className="mt-3 max-w-2xl text-cream/80 mx-auto">
             Subscribe to get exclusive offers, new menu items, and updates on our upcoming coffee
             cupping events.
           </p>
@@ -75,6 +79,20 @@ export function Newsletter() {
               </button>
             </div>
           </form>
+
+          <AnimatePresence>
+            {subscribed && (
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                className="mt-4 inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#2E170C] border border-[#C87D32] text-xs sm:text-sm text-[#FAF2EA]"
+              >
+                <span>✓</span>
+                <span>Thanks for subscribing! Check your email for your welcome perk.</span>
+              </motion.div>
+            )}
+          </AnimatePresence>
 
           <motion.p
             className="mt-4 text-xs text-cream/50"

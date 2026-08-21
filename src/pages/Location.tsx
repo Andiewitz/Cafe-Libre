@@ -99,7 +99,7 @@ export function Location() {
 
           {/* Map */}
           <motion.div
-            className="overflow-hidden rounded-2xl shadow-lg"
+            className="overflow-hidden rounded-2xl shadow-lg border border-[#3E2113]/30 min-h-[300px]"
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -107,9 +107,7 @@ export function Location() {
           >
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2797.839205282148!2d-122.4194!3d45.5231!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5495215f91f5d1d5%3A0x1e9d2f8f6b5a7e8b!5e0!3m2!1sen!2sus!4v1700000000000"
-              width="100%"
-              height="500"
-              style={{ border: 0 }}
+              className="w-full h-[320px] sm:h-[420px] lg:h-full min-h-[340px] border-0"
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"

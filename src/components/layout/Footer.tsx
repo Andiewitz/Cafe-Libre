@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { MaterialSymbol } from '@/components/ui/MaterialSymbol'
 import { Dialog } from '@/components/ui/Dialog'
+import { InstagramIcon, FacebookIcon, TwitterXIcon } from '@/components/icons/IconSet'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
@@ -36,15 +37,21 @@ export function Footer() {
     setTimeout(() => setSubscribed(false), 5000)
   }
 
+  const socialLinks = [
+    { name: 'Instagram', icon: InstagramIcon, href: 'https://instagram.com' },
+    { name: 'Facebook', icon: FacebookIcon, href: 'https://facebook.com' },
+    { name: 'X / Twitter', icon: TwitterXIcon, href: 'https://x.com' },
+  ]
+
   return (
     <footer className="w-full bg-[#210e0b] text-[#FAF2EA] border-t border-[#3E2113] relative z-10 overflow-hidden font-sans">
       {/* Background ambient glow matching hero palette */}
-      <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#C87D32]/10 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-[#8B4513]/15 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-0 right-1/4 w-72 sm:w-96 h-72 sm:h-96 bg-[#C87D32]/10 rounded-full blur-[100px] sm:blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-0 left-1/4 w-72 sm:w-96 h-72 sm:h-96 bg-[#8B4513]/15 rounded-full blur-[100px] sm:blur-[120px] pointer-events-none" />
 
       {/* Top Section: Unified Newsletter Subscription */}
       <div className="border-b border-[#3E2113]/80 relative z-10">
-        <div className="max-w-[1200px] mx-auto px-5 sm:px-8 md:px-16 py-16 sm:py-20 text-center">
+        <div className="max-w-[1200px] mx-auto px-4 sm:px-8 md:px-16 py-12 sm:py-16 md:py-20 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -53,22 +60,22 @@ export function Footer() {
             className="max-w-2xl mx-auto flex flex-col items-center"
           >
             {/* Coffee Icon Badge */}
-            <div className="w-12 h-12 rounded-full bg-[#1A0C05] border border-[#C87D32]/50 flex items-center justify-center text-[#D6A068] mb-5 shadow-lg shadow-[#C87D32]/10">
-              <MaterialSymbol name="mail" className="text-2xl text-[#D6A068]" />
+            <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#1A0C05] border border-[#C87D32]/50 flex items-center justify-center text-[#D6A068] mb-4 sm:mb-5 shadow-lg shadow-[#C87D32]/10">
+              <MaterialSymbol name="mail" className="text-xl sm:text-2xl text-[#D6A068]" />
             </div>
 
-            <h2 className="font-hero text-3xl sm:text-4xl md:text-5xl text-[#FAF2EA] leading-tight font-normal">
+            <h2 className="font-hero text-2xl sm:text-4xl md:text-5xl text-[#FAF2EA] leading-tight font-normal">
               Awaken Your Inbox With <br className="hidden sm:inline" />
               <span className="text-[#D6A068] italic">Seasonal Roasts.</span>
             </h2>
 
-            <p className="mt-4 text-sm sm:text-base text-[#BBA496] max-w-lg leading-relaxed">
+            <p className="mt-3 sm:mt-4 text-xs sm:text-sm md:text-base text-[#BBA496] max-w-lg leading-relaxed px-2">
               Subscribe to the Roaster’s Circle for private single-origin drops, tasting flight invites, and <strong className="text-[#FAF2EA] font-semibold">15% off</strong> your first beans order.
             </p>
 
             {/* Newsletter Form */}
-            <form onSubmit={handleSubmit(onSubmit)} className="mt-8 w-full max-w-md">
-              <div className="flex flex-col sm:flex-row gap-3 items-center justify-center">
+            <form onSubmit={handleSubmit(onSubmit)} className="mt-6 sm:mt-8 w-full max-w-md px-2 sm:px-0">
+              <div className="flex flex-col sm:flex-row gap-2.5 sm:gap-3 items-stretch sm:items-center justify-center">
                 <div className="relative w-full">
                   <MaterialSymbol
                     name="alternate_email"
@@ -78,7 +85,7 @@ export function Footer() {
                     type="email"
                     placeholder="Enter your email address..."
                     className={cn(
-                      'w-full rounded-full bg-[#1A0C05] border border-[#C87D32]/40 pl-11 pr-4 py-3.5',
+                      'w-full rounded-full bg-[#1A0C05] border border-[#C87D32]/40 pl-11 pr-4 py-3 sm:py-3.5',
                       'text-[#FAF2EA] placeholder-[#FAF2EA]/40 text-sm tracking-wide',
                       'focus:outline-none focus:ring-2 focus:ring-[#C87D32] focus:border-transparent transition-all shadow-inner',
                       errors.email && 'border-red-400 focus:ring-red-400',
@@ -95,7 +102,7 @@ export function Footer() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full sm:w-auto shrink-0 bg-[#C87D32] hover:bg-[#D2691E] text-white font-medium px-8 py-3.5 rounded-full transition-all active:scale-95 text-sm shadow-lg shadow-[#C87D32]/25 cursor-pointer disabled:opacity-50 flex items-center justify-center gap-2"
+                  className="w-full sm:w-auto shrink-0 bg-[#C87D32] hover:bg-[#D2691E] text-white font-medium px-6 sm:px-8 py-3 sm:py-3.5 rounded-full transition-all active:scale-95 text-sm shadow-lg shadow-[#C87D32]/25 cursor-pointer disabled:opacity-50 flex items-center justify-center gap-2"
                 >
                   {isSubmitting ? (
                     'Joining...'
@@ -118,7 +125,7 @@ export function Footer() {
                   exit={{ opacity: 0, y: -10, scale: 0.95 }}
                   className="mt-4 px-4 py-2.5 rounded-xl bg-[#2E170C] border border-[#C87D32] text-[#FAF2EA] text-xs sm:text-sm flex items-center gap-2.5 shadow-xl"
                 >
-                  <span className="w-5 h-5 rounded-full bg-[#C87D32] text-white flex items-center justify-center text-xs font-bold">
+                  <span className="w-5 h-5 rounded-full bg-[#C87D32] text-white flex items-center justify-center text-xs font-bold shrink-0">
                     ✓
                   </span>
                   <span>Welcome to the circle! Check your email for your 15% discount code.</span>
@@ -126,7 +133,7 @@ export function Footer() {
               )}
             </AnimatePresence>
 
-            <p className="mt-4 text-xs text-[#8E7365]">
+            <p className="mt-3 sm:mt-4 text-[11px] sm:text-xs text-[#8E7365]">
               Strictly zero spam. Unsubscribe with one click anytime.
             </p>
           </motion.div>
@@ -134,16 +141,16 @@ export function Footer() {
       </div>
 
       {/* Main Footer Navigation & Brand Section */}
-      <div className="max-w-[1200px] mx-auto px-5 sm:px-8 md:px-16 py-14 sm:py-16 relative z-10">
+      <div className="max-w-[1200px] mx-auto px-5 sm:px-8 md:px-16 py-12 sm:py-16 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="grid grid-cols-1 md:grid-cols-12 gap-10 lg:gap-12 items-start"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-12 items-start"
         >
           {/* Brand Column */}
-          <div className="md:col-span-5 flex flex-col items-start space-y-4">
+          <div className="col-span-1 sm:col-span-2 lg:col-span-5 flex flex-col items-start space-y-4">
             <Link
               to="/"
               className="flex items-center gap-3 group select-none"
@@ -166,6 +173,36 @@ export function Footer() {
               Ethically sourced, direct-trade single-origin coffees micro-roasted in small batches to awaken the palate.
             </p>
 
+            {/* Live Cafe Operational Indicator */}
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#1A0C05] border border-[#3E2113] text-xs text-[#FAF2EA]">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+              <span>Open Daily in Portland • 6:30 AM – 8:00 PM</span>
+            </div>
+
+            {/* Social Media Links */}
+            <div className="pt-2">
+              <p className="text-xs uppercase tracking-wider text-[#8E7365] font-semibold mb-2.5">
+                Connect With Us
+              </p>
+              <div className="flex items-center gap-2.5">
+                {socialLinks.map((social) => {
+                  const Icon = social.icon
+                  return (
+                    <a
+                      key={social.name}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`Follow Café Libre on ${social.name}`}
+                      className="w-9 h-9 rounded-full bg-[#1A0C05] border border-[#3E2113] flex items-center justify-center text-[#D6A068] hover:bg-[#C87D32] hover:text-white hover:border-[#C87D32] transition-all duration-200"
+                    >
+                      <Icon className="w-4 h-4" />
+                    </a>
+                  )
+                })}
+              </div>
+            </div>
+
             <div className="pt-2 flex flex-col gap-2 text-xs sm:text-sm text-[#D6A068]">
               <a
                 href="mailto:hello@cafelibre.com"
@@ -181,15 +218,11 @@ export function Footer() {
                 <MaterialSymbol name="phone" className="text-base text-[#C87D32]" />
                 <span>(503) 555-0123</span>
               </a>
-              <div className="inline-flex items-center gap-2 text-[#BBA496]">
-                <MaterialSymbol name="schedule" className="text-base text-[#C87D32]" />
-                <span>Daily: 6:30 AM – 8:00 PM</span>
-              </div>
             </div>
           </div>
 
           {/* Quick Links Column 1: Explore */}
-          <div className="md:col-span-2 sm:col-span-4 col-span-6 space-y-3.5">
+          <div className="col-span-1 sm:col-span-1 lg:col-span-2 space-y-3.5">
             <h3 className="font-semibold text-xs uppercase tracking-widest text-[#D6A068] font-sans">
               Explore
             </h3>
@@ -211,14 +244,14 @@ export function Footer() {
               </li>
               <li>
                 <a href="/#community-reviews" className="hover:text-[#FAF2EA] transition-colors">
-                  Reviews
+                  Reviews & Ratings
                 </a>
               </li>
             </ul>
           </div>
 
-          {/* Quick Links Column 2: Coffee & Craft */}
-          <div className="md:col-span-2 sm:col-span-4 col-span-6 space-y-3.5">
+          {/* Quick Links Column 2: Company */}
+          <div className="col-span-1 sm:col-span-1 lg:col-span-2 space-y-3.5">
             <h3 className="font-semibold text-xs uppercase tracking-widest text-[#D6A068] font-sans">
               Company
             </h3>
@@ -246,8 +279,8 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Quick Links Column 3: Visit */}
-          <div className="md:col-span-3 sm:col-span-4 col-span-12 space-y-3.5">
+          {/* Quick Links Column 3: Flagship Cafe */}
+          <div className="col-span-1 sm:col-span-2 lg:col-span-3 space-y-3.5">
             <h3 className="font-semibold text-xs uppercase tracking-widest text-[#D6A068] font-sans">
               Flagship Cafe
             </h3>
@@ -271,14 +304,14 @@ export function Footer() {
         </motion.div>
 
         {/* Bottom Bar: Copyright & Working Legal Dialog Links */}
-        <div className="mt-14 pt-8 border-t border-[#3E2113]/80 flex flex-col sm:flex-row items-center justify-between text-xs text-[#8E7365] gap-4">
+        <div className="mt-12 sm:mt-14 pt-6 sm:pt-8 border-t border-[#3E2113]/80 flex flex-col sm:flex-row items-center justify-between text-xs text-[#8E7365] gap-4 text-center sm:text-left">
           <p>© 2026 Café Libre Artisanal Coffee Co. All rights reserved.</p>
           
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-4 sm:gap-6">
             <button
               type="button"
               onClick={() => setPrivacyOpen(true)}
-              className="hover:text-[#FAF2EA] transition-colors cursor-pointer"
+              className="hover:text-[#FAF2EA] transition-colors cursor-pointer py-1"
             >
               Privacy Policy
             </button>
@@ -286,7 +319,7 @@ export function Footer() {
             <button
               type="button"
               onClick={() => setTermsOpen(true)}
-              className="hover:text-[#FAF2EA] transition-colors cursor-pointer"
+              className="hover:text-[#FAF2EA] transition-colors cursor-pointer py-1"
             >
               Terms of Service
             </button>
@@ -332,3 +365,4 @@ export function Footer() {
     </footer>
   )
 }
+

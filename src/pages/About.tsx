@@ -97,18 +97,18 @@ export function About() {
             community-driven. Every bean we source supports small farmers, every cup we brew tells a
             story, and every corner of our shop invites you to slow down and savor.
           </p>
-          <div className="mt-8 flex justify-center gap-8">
+          <div className="mt-8 flex flex-wrap justify-center gap-6 sm:gap-8">
             <div className="flex items-center gap-3">
-              <LeafIcon className="h-8 w-8 text-accent" />
-              <span className="text-sm text-primary-muted">100% Ethically Sourced</span>
+              <LeafIcon className="h-7 w-7 sm:h-8 sm:w-8 text-accent" />
+              <span className="text-xs sm:text-sm text-primary-muted font-medium">100% Ethically Sourced</span>
             </div>
             <div className="flex items-center gap-3">
-              <CoffeeBeanIcon className="h-8 w-8 text-accent" />
-              <span className="text-sm text-primary-muted">Small-Batch Roasted</span>
+              <CoffeeBeanIcon className="h-7 w-7 sm:h-8 sm:w-8 text-accent" />
+              <span className="text-xs sm:text-sm text-primary-muted font-medium">Small-Batch Roasted</span>
             </div>
             <div className="flex items-center gap-3">
-              <BookIcon className="h-8 w-8 text-accent" />
-              <span className="text-sm text-primary-muted">Locally Owned</span>
+              <BookIcon className="h-7 w-7 sm:h-8 sm:w-8 text-accent" />
+              <span className="text-xs sm:text-sm text-primary-muted font-medium">Locally Owned</span>
             </div>
           </div>
         </motion.div>
