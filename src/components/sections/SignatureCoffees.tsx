@@ -5,9 +5,9 @@ import { TextEffect } from '@/components/ui/text-effect'
 const coldBrewCup = '/images/cold-brew.png'
 const blackAmericanoImg = '/images/black-americano.png'
 const cappuccinoSlideImg = '/images/cappucino.png'
-const sierraBlendImg = '/images/sierra-blend.png'
+const sierraBlendImg = '/images/new-sierra-blend.png'
 const highlandMistImg = '/images/highland-mist-blend.png'
-const velvetVanillaMochaImg = '/images/velvet-vanilla-mocha.png'
+const velvetVanillaMochaImg = '/images/velvet-vanila-mocha.png'
 
 interface BrewSlide {
   title: string
