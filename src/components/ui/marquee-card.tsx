@@ -17,6 +17,11 @@ export const MarqueeCard = () => {
                   loading="lazy"
                   decoding="async"
                   referrerPolicy="no-referrer"
+                  onError={(e) => {
+                    const target = e.currentTarget
+                    target.onerror = null
+                    target.src = '/placeholder.svg'
+                  }}
                   className="h-10 w-10 object-cover rounded-full"
                 />
                 <div>

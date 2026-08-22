@@ -1,8 +1,8 @@
-import testimonial1 from '@/assets/images/customer_elena_1787319696962.jpg'
-import testimonial2 from '@/assets/images/customer_marcus_1787319713627.jpg'
-import testimonial3 from '@/assets/images/customer_sophia_1787319729205.jpg'
-import avatarCustomer from '@/assets/images/avatar-customer.jpg'
-import avatarBarista from '@/assets/images/avatar-barista.jpg'
+const testimonial1 = 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=80'
+const testimonial2 = 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=400&q=80'
+const testimonial3 = 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80'
+const avatarCustomer = 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80'
+const avatarBarista = 'https://images.unsplash.com/photo-1583394293214-28ded15ee548?auto=format&fit=crop&w=400&q=80'
 
 export type Testimonial = {
   id: string

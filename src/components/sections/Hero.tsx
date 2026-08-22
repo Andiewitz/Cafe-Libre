@@ -1,10 +1,10 @@
 import { motion } from 'framer-motion'
 import { MaterialSymbol } from '@/components/ui/MaterialSymbol'
-import newHeroImage from '@/assets/images/new-hero-image.webp'
-import heroBackground from '@/assets/images/hero-background.webp'
-import avatarBarista from '@/assets/images/avatar-barista.jpg'
-import avatarCustomer from '@/assets/images/avatar-customer.jpg'
-import avatarHands from '@/assets/images/avatar-hands.jpg'
+const newHeroImage = '/images/new-hero-image.png'
+const heroBackground = '/images/hero-background.png'
+const avatarBarista = 'https://images.unsplash.com/photo-1583394293214-28ded15ee548?auto=format&fit=crop&w=400&q=80'
+const avatarCustomer = 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80'
+const avatarHands = 'https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=400&q=80'
 
 export function Hero() {
   return (
@@ -92,26 +92,41 @@ export function Hero() {
               <img
                 src={avatarBarista}
                 alt="Barista portrait"
-                className="w-12 h-12 rounded-full border-2 border-background object-cover"
+                className="w-12 h-12 rounded-full border-2 border-background object-cover bg-stone-700"
                 loading="lazy"
                 decoding="async"
                 referrerPolicy="no-referrer"
+                onError={(e) => {
+                  const target = e.currentTarget
+                  target.onerror = null
+                  target.src = '/placeholder.svg'
+                }}
               />
               <img
                 src={avatarCustomer}
                 alt="Customer enjoying coffee"
-                className="w-12 h-12 rounded-full border-2 border-background object-cover"
+                className="w-12 h-12 rounded-full border-2 border-background object-cover bg-stone-700"
                 loading="lazy"
                 decoding="async"
                 referrerPolicy="no-referrer"
+                onError={(e) => {
+                  const target = e.currentTarget
+                  target.onerror = null
+                  target.src = '/placeholder.svg'
+                }}
               />
               <img
                 src={avatarHands}
                 alt="Hands holding coffee mug"
-                className="w-12 h-12 rounded-full border-2 border-background object-cover"
+                className="w-12 h-12 rounded-full border-2 border-background object-cover bg-stone-700"
                 loading="lazy"
                 decoding="async"
                 referrerPolicy="no-referrer"
+                onError={(e) => {
+                  const target = e.currentTarget
+                  target.onerror = null
+                  target.src = '/placeholder.svg'
+                }}
               />
               <div className="w-12 h-12 rounded-full border-2 border-background bg-surface-container-high flex items-center justify-center text-xs font-label-md text-primary">
                 +2k

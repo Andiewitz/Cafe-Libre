@@ -2,12 +2,12 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { MaterialSymbol } from '@/components/ui/MaterialSymbol'
 import { TextEffect } from '@/components/ui/text-effect'
-import coldBrewCup from '@/assets/images/cold-brew-cup.webp'
-import blackAmericanoImg from '@/assets/images/black-americano.webp'
-import cappuccinoSlideImg from '@/assets/images/capuccino.webp'
-import sierraBlendImg from '@/assets/images/sierra-blend.webp'
-import highlandMistImg from '@/assets/images/highland-mist-blend.webp'
-import velvetVanillaMochaImg from '@/assets/images/velvet-vanila-mocha.webp'
+const coldBrewCup = '/images/cold-brew.png'
+const blackAmericanoImg = '/images/black-americano.png'
+const cappuccinoSlideImg = '/images/cappucino.png'
+const sierraBlendImg = '/images/sierra-blend.png'
+const highlandMistImg = '/images/highland-mist-blend.png'
+const velvetVanillaMochaImg = '/images/velvet-vanilla-mocha.png'
 
 interface BrewSlide {
   title: string
@@ -290,16 +290,21 @@ export function SignatureCoffees() {
 
               {/* Dynamic Coffee Cup / Brew Image floating over the wedge */}
               <div className={`absolute ${currentSlide.imageContainerClass} pointer-events-none z-10 flex items-center justify-center`}>
-                <motion.img
-                  key={activeSlide}
-                  initial={{ scale: 0.92, rotate: activeSlide === 0 ? -16 : -4, opacity: 0.7 }}
-                  animate={{ scale: 1, rotate: activeSlide === 0 ? -12 : 0, opacity: 1 }}
-                  transition={{ duration: 0.45, ease: 'easeOut' }}
-                  src={currentSlide.image}
-                  alt={currentSlide.imageAlt}
-                  className="w-full h-auto drop-shadow-[0_20px_35px_rgba(0,0,0,0.55)] transform object-contain"
-                  loading="eager"
-                />
+                  <motion.img
+                    key={activeSlide}
+                    initial={{ scale: 0.92, rotate: activeSlide === 0 ? -16 : -4, opacity: 0.7 }}
+                    animate={{ scale: 1, rotate: activeSlide === 0 ? -12 : 0, opacity: 1 }}
+                    transition={{ duration: 0.45, ease: 'easeOut' }}
+                    src={currentSlide.image}
+                    alt={currentSlide.imageAlt}
+                    onError={(e) => {
+                      const target = e.currentTarget
+                      target.onerror = null
+                      target.src = '/placeholder.svg'
+                    }}
+                    className="w-full h-auto drop-shadow-[0_20px_35px_rgba(0,0,0,0.55)] transform object-contain"
+                    loading="eager"
+                  />
               </div>
 
               {/* Right Side Feature Text Badges */}
@@ -447,6 +452,11 @@ export function SignatureCoffees() {
                       <img
                         src={item.image}
                         alt={item.name}
+                        onError={(e) => {
+                          const target = e.currentTarget
+                          target.onerror = null
+                          target.src = '/placeholder.svg'
+                        }}
                         className="w-[61%] sm:w-[63%] max-w-[196px] h-auto object-contain drop-shadow-[0_18px_24px_rgba(0,0,0,0.6)] group-hover:scale-105 group-hover:-translate-y-2 transition-all duration-300"
                         loading="lazy"
                       />

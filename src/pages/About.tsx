@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom'
 import { Container } from '@/components/layout/Container'
 import { MaterialSymbol } from '@/components/ui/MaterialSymbol'
 
-// Asset imports
-import shopInteriorBanner from '@/assets/images/cafe_shop_interior_banner_1787318805983.jpg'
-import avatarBarista from '@/assets/images/avatar-barista.jpg'
-import coffeeBeans from '@/assets/images/roasted_beans_1787319635869.jpg'
-import latteArt from '@/assets/images/latte_art_1787319478031.jpg'
-import freshCroissant from '@/assets/images/flaky_croissant_1787319588977.jpg'
+// Asset paths
+const shopInteriorBanner = 'https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1600&q=80'
+const avatarBarista = 'https://images.unsplash.com/photo-1583394293214-28ded15ee548?auto=format&fit=crop&w=400&q=80'
+const coffeeBeans = 'https://images.unsplash.com/photo-1587734195503-904fca47e0e9?auto=format&fit=crop&w=800&q=80'
+const latteArt = 'https://images.unsplash.com/photo-1534687941688-6a1ae15a2e6f?auto=format&fit=crop&w=800&q=80'
+const freshCroissant = 'https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=800&q=80'
 
 export function About() {
   return (
@@ -29,6 +29,11 @@ export function About() {
             loading="eager"
             decoding="async"
             referrerPolicy="no-referrer"
+            onError={(e) => {
+              const target = e.currentTarget
+              target.onerror = null
+              target.src = '/placeholder.svg'
+            }}
             className="w-full h-full object-cover object-center"
           />
 
@@ -89,6 +94,11 @@ export function About() {
                 loading="lazy"
                 decoding="async"
                 referrerPolicy="no-referrer"
+                onError={(e) => {
+                  const target = e.currentTarget
+                  target.onerror = null
+                  target.src = '/placeholder.svg'
+                }}
                 className="w-11 h-11 rounded-full object-cover border border-[#E8DCD0]"
               />
               <div>
@@ -111,13 +121,18 @@ export function About() {
             {/* Seamless Inline Photo Break */}
             <div className="my-10 grid grid-cols-1 sm:grid-cols-3 gap-4">
               <div className="space-y-2">
-                <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-sm">
+                <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-sm bg-[#E8DCD0]">
                   <img
                     src={coffeeBeans}
                     alt="Freshly roasted whole beans"
                     loading="lazy"
                     decoding="async"
                     referrerPolicy="no-referrer"
+                    onError={(e) => {
+                      const target = e.currentTarget
+                      target.onerror = null
+                      target.src = '/placeholder.svg'
+                    }}
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                   />
                 </div>
@@ -126,13 +141,18 @@ export function About() {
                 </p>
               </div>
               <div className="space-y-2">
-                <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-sm">
+                <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-sm bg-[#E8DCD0]">
                   <img
                     src={latteArt}
                     alt="Precision latte pour"
                     loading="lazy"
                     decoding="async"
                     referrerPolicy="no-referrer"
+                    onError={(e) => {
+                      const target = e.currentTarget
+                      target.onerror = null
+                      target.src = '/placeholder.svg'
+                    }}
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                   />
                 </div>
@@ -141,13 +161,18 @@ export function About() {
                 </p>
               </div>
               <div className="space-y-2">
-                <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-sm">
+                <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-sm bg-[#E8DCD0]">
                   <img
                     src={freshCroissant}
                     alt="Fresh baked pastry"
                     loading="lazy"
                     decoding="async"
                     referrerPolicy="no-referrer"
+                    onError={(e) => {
+                      const target = e.currentTarget
+                      target.onerror = null
+                      target.src = '/placeholder.svg'
+                    }}
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                   />
                 </div>

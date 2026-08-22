@@ -117,7 +117,8 @@ export function Testimonials() {
                         referrerPolicy="no-referrer"
                         onError={(e) => {
                           const target = e.currentTarget
-                          target.style.opacity = '0.5'
+                          target.onerror = null
+                          target.src = '/placeholder.svg'
                         }}
                       />
                       <div>

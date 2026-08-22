@@ -64,8 +64,7 @@ export function MenuCard({
             onError={(e) => {
               const target = e.currentTarget
               target.onerror = null
-              target.src = ''
-              target.style.display = 'none'
+              target.src = '/placeholder.svg'
             }}
             className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
           />
