@@ -3,12 +3,12 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { MaterialSymbol } from '@/components/ui/MaterialSymbol'
 import { TextEffect } from '@/components/ui/text-effect'
 // Local signature coffee image assets
-const coldBrewCup = '/images/cold-brew.webp'
-const blackAmericanoImg = '/images/black-americano.webp'
-const cappuccinoSlideImg = '/images/cappuccino.webp'
-const sierraBlendImg = '/images/new-sierra-blend.webp'
-const highlandMistImg = '/images/highland-mist-blend.webp'
-const velvetVanillaMochaImg = '/images/velvet-vanilla-mocha.webp'
+const coldBrewCup = '/images/cold-brew.png'
+const blackAmericanoImg = '/images/black-americano.png'
+const cappuccinoSlideImg = '/images/cappuccino.png'
+const sierraBlendImg = '/images/new-sierra-blend.png'
+const highlandMistImg = '/images/highland-mist-blend.png'
+const velvetVanillaMochaImg = '/images/velvet-vanilla-mocha.png'
 
 interface BrewSlide {
   title: string

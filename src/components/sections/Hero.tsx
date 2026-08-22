@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { MaterialSymbol } from '@/components/ui/MaterialSymbol'
-const newHeroImage = '/images/new-hero-image.webp'
-const heroBackground = '/images/hero-background.webp'
+const newHeroImage = '/images/new-hero-image.png'
+const heroBackground = '/images/hero-background.png'
 const avatarBarista =
   'https://images.unsplash.com/photo-1583394293214-28ded15ee548?auto=format&fit=crop&w=400&q=80'
 const avatarCustomer =
