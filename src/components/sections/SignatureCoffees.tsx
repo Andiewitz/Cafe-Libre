@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { MaterialSymbol } from '@/components/ui/MaterialSymbol'
 import { TextEffect } from '@/components/ui/text-effect'
@@ -9,6 +9,20 @@ const cappuccinoSlideImg = '/images/cappuccino.png'
 const sierraBlendImg = '/images/new-sierra-blend.png'
 const highlandMistImg = '/images/highland-mist-blend.png'
 const velvetVanillaMochaImg = '/images/velvet-vanilla-mocha.png'
+
+// Preload all signature coffee images at module evaluation time (before React hydration)
+const signatureImagePaths = [
+  coldBrewCup,
+  blackAmericanoImg,
+  cappuccinoSlideImg,
+  sierraBlendImg,
+  highlandMistImg,
+  velvetVanillaMochaImg,
+]
+signatureImagePaths.forEach((src) => {
+  const img = new Image()
+  img.src = src
+})
 
 interface BrewSlide {
   title: string
@@ -86,23 +100,6 @@ export function SignatureCoffees() {
   const [selectedSize, setSelectedSize] = useState<'Small' | 'Medium' | 'Large'>('Medium')
   const [addedMain, setAddedMain] = useState(false)
   const [addedItems, setAddedItems] = useState<Record<string, boolean>>({})
-
-  // Preload and warm cache for all slide and product imagery
-  useEffect(() => {
-    const imagesToPreload = [
-      coldBrewCup,
-      blackAmericanoImg,
-      cappuccinoSlideImg,
-      sierraBlendImg,
-      highlandMistImg,
-      velvetVanillaMochaImg,
-    ]
-
-    imagesToPreload.forEach((src) => {
-      const img = new Image()
-      img.src = src
-    })
-  }, [])
 
   const currentSlide = BREW_SLIDES[activeSlide]
   const unitPrice = currentSlide.sizePrices[selectedSize]

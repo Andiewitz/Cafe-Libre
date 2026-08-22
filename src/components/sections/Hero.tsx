@@ -13,13 +13,17 @@ export function Hero() {
   return (
     <section
       className="relative min-h-screen flex items-center pt-28 sm:pt-36 md:pt-40 pb-16 overflow-hidden"
-      style={{
-        backgroundImage: `url(${heroBackground})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-      }}
     >
+      {/* Hero background image - inline for preloadability */}
+      <img
+        src={heroBackground}
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 w-full h-full object-cover -z-10"
+        loading="eager"
+        decoding="async"
+        fetchPriority="high"
+      />
       {/* Abstract background ambient elements */}
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
@@ -177,6 +181,7 @@ export function Hero() {
                 className="w-full h-full object-contain"
                 loading="eager"
                 decoding="async"
+                fetchPriority="high"
                 onError={(e) => {
                   const target = e.currentTarget
                   target.onerror = null
