@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { MaterialSymbol } from '@/components/ui/MaterialSymbol'
 import { TextEffect } from '@/components/ui/text-effect'
+// Local signature coffee image assets
 const coldBrewCup = '/images/cold-brew.png'
 const blackAmericanoImg = '/images/black-americano.png'
 const cappuccinoSlideImg = '/images/cappucino.png'
