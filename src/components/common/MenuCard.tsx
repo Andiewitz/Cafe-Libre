@@ -31,7 +31,8 @@ export function MenuCard({
   const [isFavorite, setIsFavorite] = useState(false)
   const [justAdded, setJustAdded] = useState(false)
 
-  const defaultBadge = badgeText || (popular ? 'Trending' : category === 'coffee' ? 'Signature' : 'Popular')
+  const defaultBadge =
+    badgeText || (popular ? 'Trending' : category === 'coffee' ? 'Signature' : 'Popular')
 
   const handleAdd = (e: React.MouseEvent) => {
     e.stopPropagation()
@@ -103,7 +104,9 @@ export function MenuCard({
             aria-label={isFavorite ? 'Remove from favorites' : 'Add to favorites'}
             className={cn(
               'w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center shrink-0 transition-transform active:scale-90 cursor-pointer',
-              isFavorite ? 'bg-red-50 text-red-500' : 'bg-[#FAF5F0] text-[#A0887A] hover:text-red-500 hover:bg-red-50',
+              isFavorite
+                ? 'bg-red-50 text-red-500'
+                : 'bg-[#FAF5F0] text-[#A0887A] hover:text-red-500 hover:bg-red-50',
             )}
           >
             <HeartIcon

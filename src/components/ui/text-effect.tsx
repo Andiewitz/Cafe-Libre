@@ -1,10 +1,5 @@
 import { cn } from '@/lib/utils'
-import {
-  AnimatePresence,
-  motion,
-  type TargetAndTransition,
-  type Variants,
-} from 'framer-motion'
+import { AnimatePresence, motion, type TargetAndTransition, type Variants } from 'framer-motion'
 import React from 'react'
 
 export type PresetType = 'blur' | 'shake' | 'scale' | 'fade' | 'slide'
@@ -52,10 +47,7 @@ const defaultItemVariants: Variants = {
   exit: { opacity: 0 },
 }
 
-const presetVariants: Record<
-  PresetType,
-  { container: Variants; item: Variants }
-> = {
+const presetVariants: Record<PresetType, { container: Variants; item: Variants }> = {
   blur: {
     container: defaultContainerVariants,
     item: {
@@ -110,11 +102,7 @@ const AnimationComponent: React.FC<{
         {segment}
       </motion.span>
     ) : per === 'word' ? (
-      <motion.span
-        aria-hidden="true"
-        variants={variants}
-        className="inline-block whitespace-pre"
-      >
+      <motion.span aria-hidden="true" variants={variants} className="inline-block whitespace-pre">
         {segment}
       </motion.span>
     ) : (
@@ -138,11 +126,7 @@ const AnimationComponent: React.FC<{
 
   const defaultWrapperClassName = per === 'line' ? 'block' : 'inline-block'
 
-  return (
-    <span className={cn(defaultWrapperClassName, segmentWrapperClassName)}>
-      {content}
-    </span>
-  )
+  return <span className={cn(defaultWrapperClassName, segmentWrapperClassName)}>{content}</span>
 })
 
 AnimationComponent.displayName = 'AnimationComponent'
@@ -186,8 +170,8 @@ export function TextEffect({
       transition: {
         ...(containerVariants.visible as TargetAndTransition)?.transition,
         staggerChildren:
-          (containerVariants.visible as TargetAndTransition)?.transition
-            ?.staggerChildren || stagger,
+          (containerVariants.visible as TargetAndTransition)?.transition?.staggerChildren ||
+          stagger,
         delayChildren: delay,
       },
     },

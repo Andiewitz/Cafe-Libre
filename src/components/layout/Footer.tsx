@@ -70,11 +70,16 @@ export function Footer() {
             </h2>
 
             <p className="mt-3 sm:mt-4 text-xs sm:text-sm md:text-base text-[#BBA496] max-w-lg leading-relaxed px-2">
-              Subscribe to the Roaster’s Circle for private single-origin drops, tasting flight invites, and <strong className="text-[#FAF2EA] font-semibold">15% off</strong> your first beans order.
+              Subscribe to the Roaster’s Circle for private single-origin drops, tasting flight
+              invites, and <strong className="text-[#FAF2EA] font-semibold">15% off</strong> your
+              first beans order.
             </p>
 
             {/* Newsletter Form */}
-            <form onSubmit={handleSubmit(onSubmit)} className="mt-6 sm:mt-8 w-full max-w-md px-2 sm:px-0">
+            <form
+              onSubmit={handleSubmit(onSubmit)}
+              className="mt-6 sm:mt-8 w-full max-w-md px-2 sm:px-0"
+            >
               <div className="flex flex-col sm:flex-row gap-2.5 sm:gap-3 items-stretch sm:items-center justify-center">
                 <div className="relative w-full">
                   <MaterialSymbol
@@ -170,7 +175,8 @@ export function Footer() {
             </Link>
 
             <p className="text-sm text-[#BBA496] leading-relaxed max-w-sm font-sans pt-1">
-              Ethically sourced, direct-trade single-origin coffees micro-roasted in small batches to awaken the palate.
+              Ethically sourced, direct-trade single-origin coffees micro-roasted in small batches
+              to awaken the palate.
             </p>
 
             {/* Live Cafe Operational Indicator */}
@@ -314,7 +320,7 @@ export function Footer() {
         {/* Bottom Bar: Copyright & Working Legal Dialog Links */}
         <div className="mt-12 sm:mt-14 pt-6 sm:pt-8 border-t border-[#3E2113]/80 flex flex-col sm:flex-row items-center justify-between text-xs text-[#8E7365] gap-4 text-center sm:text-left">
           <p>© 2026 Café Libre Artisanal Coffee Co. All rights reserved.</p>
-          
+
           <div className="flex items-center gap-4 sm:gap-6">
             <button
               type="button"
@@ -340,13 +346,21 @@ export function Footer() {
         <div className="space-y-4 text-sm text-[#2E170C]">
           <h3 className="font-hero text-2xl text-[#2E170C]">Privacy Policy</h3>
           <p className="text-[#5D4233]">
-            At Café Libre, your privacy is deeply respected. We only collect the essential information required to fulfill your coffee orders, manage customer accounts, and deliver subscription newsletters.
+            At Café Libre, your privacy is deeply respected. We only collect the essential
+            information required to fulfill your coffee orders, manage customer accounts, and
+            deliver subscription newsletters.
           </p>
           <div className="space-y-2 text-[#5D4233]">
             <h4 className="font-bold text-[#2E170C]">1. Data Collection</h4>
-            <p>We do not sell, rent, or distribute your email address or personal details to any third-party advertisers.</p>
+            <p>
+              We do not sell, rent, or distribute your email address or personal details to any
+              third-party advertisers.
+            </p>
             <h4 className="font-bold text-[#2E170C]">2. Payment Security</h4>
-            <p>All in-person and digital transactions are encrypted via PCI-compliant industry standard payment gateways.</p>
+            <p>
+              All in-person and digital transactions are encrypted via PCI-compliant industry
+              standard payment gateways.
+            </p>
             <h4 className="font-bold text-[#2E170C]">3. Contact</h4>
             <p>For any privacy requests or inquiries, reach us anytime at privacy@cafelibre.com.</p>
           </div>
@@ -358,19 +372,27 @@ export function Footer() {
         <div className="space-y-4 text-sm text-[#2E170C]">
           <h3 className="font-hero text-2xl text-[#2E170C]">Terms of Service</h3>
           <p className="text-[#5D4233]">
-            Welcome to Café Libre Artisanal Coffee House. By placing an order or using our digital services, you agree to our standard terms.
+            Welcome to Café Libre Artisanal Coffee House. By placing an order or using our digital
+            services, you agree to our standard terms.
           </p>
           <div className="space-y-2 text-[#5D4233]">
             <h4 className="font-bold text-[#2E170C]">1. Artisanal Freshness Guarantee</h4>
-            <p>All whole-bean and ground coffees are roasted within 48 hours of shipment to maintain maximum freshness and flavor notes.</p>
+            <p>
+              All whole-bean and ground coffees are roasted within 48 hours of shipment to maintain
+              maximum freshness and flavor notes.
+            </p>
             <h4 className="font-bold text-[#2E170C]">2. Cafe Pickup & Orders</h4>
-            <p>Fresh espresso drinks and pour-overs are prepared fresh upon your designated pickup window.</p>
+            <p>
+              Fresh espresso drinks and pour-overs are prepared fresh upon your designated pickup
+              window.
+            </p>
             <h4 className="font-bold text-[#2E170C]">3. Customer Support</h4>
-            <p>Reach out to support@cafelibre.com for order changes, returns, or roast consultations.</p>
+            <p>
+              Reach out to support@cafelibre.com for order changes, returns, or roast consultations.
+            </p>
           </div>
         </div>
       </Dialog>
     </footer>
   )
 }
-

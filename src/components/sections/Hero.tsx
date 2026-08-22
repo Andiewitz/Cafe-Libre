@@ -1,10 +1,13 @@
 import { motion } from 'framer-motion'
 import { MaterialSymbol } from '@/components/ui/MaterialSymbol'
-const newHeroImage = '/images/new-hero-image.png'
-const heroBackground = '/images/hero-background.png'
-const avatarBarista = 'https://images.unsplash.com/photo-1583394293214-28ded15ee548?auto=format&fit=crop&w=400&q=80'
-const avatarCustomer = 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80'
-const avatarHands = 'https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=400&q=80'
+import newHeroImage from '@/assets/images/new-hero-image.png'
+import heroBackground from '@/assets/images/hero-background.png'
+const avatarBarista =
+  'https://images.unsplash.com/photo-1583394293214-28ded15ee548?auto=format&fit=crop&w=400&q=80'
+const avatarCustomer =
+  'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80'
+const avatarHands =
+  'https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=400&q=80'
 
 export function Hero() {
   return (
@@ -173,6 +176,12 @@ export function Hero() {
                 alt="Coffee brew being poured"
                 className="w-full h-full object-contain"
                 loading="eager"
+                decoding="async"
+                onError={(e) => {
+                  const target = e.currentTarget
+                  target.onerror = null
+                  target.src = '/placeholder.svg'
+                }}
               />
             </motion.div>
           </motion.div>

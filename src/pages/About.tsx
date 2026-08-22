@@ -4,11 +4,16 @@ import { Container } from '@/components/layout/Container'
 import { MaterialSymbol } from '@/components/ui/MaterialSymbol'
 
 // Asset paths
-const shopInteriorBanner = 'https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1600&q=80'
-const avatarBarista = 'https://images.unsplash.com/photo-1583394293214-28ded15ee548?auto=format&fit=crop&w=400&q=80'
-const coffeeBeans = 'https://images.unsplash.com/photo-1587734195503-904fca47e0e9?auto=format&fit=crop&w=800&q=80'
-const latteArt = 'https://images.unsplash.com/photo-1534687941688-6a1ae15a2e6f?auto=format&fit=crop&w=800&q=80'
-const freshCroissant = 'https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=800&q=80'
+const shopInteriorBanner =
+  'https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1600&q=80'
+const avatarBarista =
+  'https://images.unsplash.com/photo-1583394293214-28ded15ee548?auto=format&fit=crop&w=400&q=80'
+const coffeeBeans =
+  'https://images.unsplash.com/photo-1587734195503-904fca47e0e9?auto=format&fit=crop&w=800&q=80'
+const latteArt =
+  'https://images.unsplash.com/photo-1534687941688-6a1ae15a2e6f?auto=format&fit=crop&w=800&q=80'
+const freshCroissant =
+  'https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=800&q=80'
 
 export function About() {
   return (
@@ -111,11 +116,17 @@ export function About() {
           {/* Blog Story Prose */}
           <div className="text-[#3E2B21] leading-relaxed text-lg sm:text-xl space-y-8 font-normal">
             <p className="first-letter:float-left first-letter:text-6xl sm:first-letter:text-7xl first-letter:font-bold first-letter:text-[#C87D32] first-letter:mr-3 first-letter:font-hero first-letter:leading-none">
-              Café Libre began in late 2018 with a secondhand, cast-iron sample drum roaster and a stubborn conviction: coffee was never meant to be a hurried commodity swallowed in gridlock traffic. It was meant to be an invitation to pause.
+              Café Libre began in late 2018 with a secondhand, cast-iron sample drum roaster and a
+              stubborn conviction: coffee was never meant to be a hurried commodity swallowed in
+              gridlock traffic. It was meant to be an invitation to pause.
             </p>
 
             <p>
-              We spent our earliest months cup-testing hundreds of green coffees imported directly from small-holder farming families in Huehuetenango, Guatemala and Yirgacheffe, Ethiopia. What we discovered was a tapestry of flavors that most commercial dark roasts completely incinerate: delicate notes of bergamot, candied citrus, wild blackberry, and raw honeycomb.
+              We spent our earliest months cup-testing hundreds of green coffees imported directly
+              from small-holder farming families in Huehuetenango, Guatemala and Yirgacheffe,
+              Ethiopia. What we discovered was a tapestry of flavors that most commercial dark
+              roasts completely incinerate: delicate notes of bergamot, candied citrus, wild
+              blackberry, and raw honeycomb.
             </p>
 
             {/* Seamless Inline Photo Break */}
@@ -187,13 +198,17 @@ export function About() {
             </h3>
 
             <p>
-              True flavor begins long before the beans enter our Portland roastery. It begins with rich volcanic soil, high-altitude shade canopies, and farmers who are fairly compensated for their meticulous stewardship. We bypass broker middlemen to pay on average 35% above Fair Trade minimums directly to our grower cooperatives.
+              True flavor begins long before the beans enter our Portland roastery. It begins with
+              rich volcanic soil, high-altitude shade canopies, and farmers who are fairly
+              compensated for their meticulous stewardship. We bypass broker middlemen to pay on
+              average 35% above Fair Trade minimums directly to our grower cooperatives.
             </p>
 
             {/* Clean Open Pull Quote */}
             <blockquote className="my-8 pl-6 border-l-4 border-[#C87D32] space-y-2">
               <p className="font-hero text-2xl sm:text-3xl text-[#210E0B] leading-snug">
-                “Every cup is a bridge between the high mountain farms where the beans are hand-picked and the quiet morning conversations in our cafe.”
+                “Every cup is a bridge between the high mountain farms where the beans are
+                hand-picked and the quiet morning conversations in our cafe.”
               </p>
               <footer className="text-xs font-bold text-[#8B5A3E] uppercase tracking-wider">
                 — Alex Rodriguez, Co-Founder
@@ -205,7 +220,10 @@ export function About() {
             </h3>
 
             <p>
-              While commercial factories roast hundreds of pounds per cycle with automated algorithms, we roast in small 5-kilogram batches. Every charge is monitored by ear for the first crack, carefully managing airflow and burner temperature curves to highlight each harvest’s innate terroir without imparting scorching or bitterness.
+              While commercial factories roast hundreds of pounds per cycle with automated
+              algorithms, we roast in small 5-kilogram batches. Every charge is monitored by ear for
+              the first crack, carefully managing airflow and burner temperature curves to highlight
+              each harvest’s innate terroir without imparting scorching or bitterness.
             </p>
 
             <h3 className="text-2xl sm:text-3xl font-bold text-[#1A0C05] pt-4">
@@ -213,7 +231,10 @@ export function About() {
             </h3>
 
             <p>
-              Whether you are stopping by for a swift morning espresso, settling in with a good book, or joining one of our weekend coffee cupping sessions, our door is always open. We designed Café Libre with warm Oregon timber, quiet corners, and natural lighting to be your neighborhood sanctuary.
+              Whether you are stopping by for a swift morning espresso, settling in with a good
+              book, or joining one of our weekend coffee cupping sessions, our door is always open.
+              We designed Café Libre with warm Oregon timber, quiet corners, and natural lighting to
+              be your neighborhood sanctuary.
             </p>
           </div>
 

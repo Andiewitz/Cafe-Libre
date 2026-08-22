@@ -3,12 +3,12 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { MaterialSymbol } from '@/components/ui/MaterialSymbol'
 import { TextEffect } from '@/components/ui/text-effect'
 // Local signature coffee image assets
-const coldBrewCup = '/images/cold-brew.png'
-const blackAmericanoImg = '/images/black-americano.png'
-const cappuccinoSlideImg = '/images/cappucino.png'
-const sierraBlendImg = '/images/new-sierra-blend.png'
-const highlandMistImg = '/images/highland-mist-blend.png'
-const velvetVanillaMochaImg = '/images/velvet-vanila-mocha.png'
+import coldBrewCup from '@/assets/images/cold-brew.png'
+import blackAmericanoImg from '@/assets/images/black-americano.png'
+import cappuccinoSlideImg from '@/assets/images/cappuccino.png'
+import sierraBlendImg from '@/assets/images/new-sierra-blend.png'
+import highlandMistImg from '@/assets/images/highland-mist-blend.png'
+import velvetVanillaMochaImg from '@/assets/images/velvet-vanilla-mocha.png'
 
 interface BrewSlide {
   title: string
@@ -154,7 +154,10 @@ export function SignatureCoffees() {
   ]
 
   return (
-    <section className="pt-40 sm:pt-52 md:pt-64 lg:pt-72 pb-20 md:pb-32 bg-[#F6EDE2] relative overflow-hidden" id="signature-blends">
+    <section
+      className="pt-40 sm:pt-52 md:pt-64 lg:pt-72 pb-20 md:pb-32 bg-[#F6EDE2] relative overflow-hidden"
+      id="signature-blends"
+    >
       {/* Wavy transition sitting on top of section matching hero background color */}
       <div className="absolute top-0 left-0 right-0 w-full overflow-hidden leading-none z-0 pointer-events-none">
         <svg
@@ -209,7 +212,13 @@ export function SignatureCoffees() {
                   {currentSlide.title}
                 </TextEffect>
                 <br />
-                <TextEffect per="word" preset="slide" delay={0.12} as="span" className="text-[#3D2010] inline">
+                <TextEffect
+                  per="word"
+                  preset="slide"
+                  delay={0.12}
+                  as="span"
+                  className="text-[#3D2010] inline"
+                >
                   {currentSlide.subtitle}
                 </TextEffect>
               </div>
@@ -290,22 +299,24 @@ export function SignatureCoffees() {
               </svg>
 
               {/* Dynamic Coffee Cup / Brew Image floating over the wedge */}
-              <div className={`absolute ${currentSlide.imageContainerClass} pointer-events-none z-10 flex items-center justify-center`}>
-                  <motion.img
-                    key={activeSlide}
-                    initial={{ scale: 0.92, rotate: activeSlide === 0 ? -16 : -4, opacity: 0.7 }}
-                    animate={{ scale: 1, rotate: activeSlide === 0 ? -12 : 0, opacity: 1 }}
-                    transition={{ duration: 0.45, ease: 'easeOut' }}
-                    src={currentSlide.image}
-                    alt={currentSlide.imageAlt}
-                    onError={(e) => {
-                      const target = e.currentTarget
-                      target.onerror = null
-                      target.src = '/placeholder.svg'
-                    }}
-                    className="w-full h-auto drop-shadow-[0_20px_35px_rgba(0,0,0,0.55)] transform object-contain"
-                    loading="eager"
-                  />
+              <div
+                className={`absolute ${currentSlide.imageContainerClass} pointer-events-none z-10 flex items-center justify-center`}
+              >
+                <motion.img
+                  key={activeSlide}
+                  initial={{ scale: 0.92, rotate: activeSlide === 0 ? -16 : -4, opacity: 0.7 }}
+                  animate={{ scale: 1, rotate: activeSlide === 0 ? -12 : 0, opacity: 1 }}
+                  transition={{ duration: 0.45, ease: 'easeOut' }}
+                  src={currentSlide.image}
+                  alt={currentSlide.imageAlt}
+                  onError={(e) => {
+                    const target = e.currentTarget
+                    target.onerror = null
+                    target.src = '/placeholder.svg'
+                  }}
+                  className="w-full h-auto drop-shadow-[0_20px_35px_rgba(0,0,0,0.55)] transform object-contain"
+                  loading="eager"
+                />
               </div>
 
               {/* Right Side Feature Text Badges */}
@@ -339,7 +350,9 @@ export function SignatureCoffees() {
                         onClick={() => setActiveSlide(idx)}
                         aria-label={`Go to slide ${idx + 1}`}
                         className={`h-2.5 rounded-full transition-all duration-300 cursor-pointer ${
-                          activeSlide === idx ? 'bg-[#C87D32] w-6' : 'bg-white/40 hover:bg-white/70 w-2.5'
+                          activeSlide === idx
+                            ? 'bg-[#C87D32] w-6'
+                            : 'bg-white/40 hover:bg-white/70 w-2.5'
                         }`}
                       />
                     ))}

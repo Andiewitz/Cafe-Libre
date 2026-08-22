@@ -39,7 +39,10 @@ export function Testimonials() {
   }
 
   return (
-    <section className="py-20 md:py-32 bg-[#F6EDE2] relative overflow-hidden" id="community-reviews">
+    <section
+      className="py-20 md:py-32 bg-[#F6EDE2] relative overflow-hidden"
+      id="community-reviews"
+    >
       <div className="max-w-[1240px] mx-auto px-5 sm:px-8 md:px-16 relative z-10 mb-8 sm:mb-12">
         {/* Section Header */}
         <motion.div
@@ -125,9 +128,7 @@ export function Testimonials() {
                         <h3 className="font-sans font-bold text-sm text-[#2E170C] leading-snug">
                           {testimonial.name}
                         </h3>
-                        <p className="font-sans text-xs text-[#8E7365]">
-                          {testimonial.badge}
-                        </p>
+                        <p className="font-sans text-xs text-[#8E7365]">{testimonial.badge}</p>
                       </div>
                     </div>
                     <GoogleIcon className="w-4 h-4 shrink-0 opacity-90 mt-1" />
@@ -137,10 +138,7 @@ export function Testimonials() {
                   <div className="flex items-center gap-2 mb-3">
                     <div className="flex items-center gap-0.5">
                       {[...Array(testimonial.rating)].map((_, i) => (
-                        <Star
-                          key={i}
-                          className="w-4 h-4 fill-[#FBBC04] text-[#FBBC04]"
-                        />
+                        <Star key={i} className="w-4 h-4 fill-[#FBBC04] text-[#FBBC04]" />
                       ))}
                     </div>
                     <span className="text-xs text-[#8E7365] font-sans">• {testimonial.date}</span>

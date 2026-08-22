@@ -342,4 +342,3 @@ export function HeartIcon({ className, ...props }: SVGProps<SVGSVGElement>) {
     </svg>
   )
 }
-

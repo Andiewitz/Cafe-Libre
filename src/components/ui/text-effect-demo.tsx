@@ -97,12 +97,7 @@ export function TextEffectWithCustomDelay() {
       <TextEffect per="char" delay={1.5}>
         with motion-primitives
       </TextEffect>
-      <TextEffect
-        per="char"
-        delay={2.5}
-        className="pt-12 text-xs"
-        preset="blur"
-      >
+      <TextEffect per="char" delay={2.5} className="pt-12 text-xs" preset="blur">
         (and delay!)
       </TextEffect>
     </div>
@@ -192,12 +187,7 @@ export function TextEffectWithExit() {
   }
 
   return (
-    <TextEffect
-      className="inline-flex"
-      per="char"
-      variants={blurSlideVariants}
-      trigger={trigger}
-    >
+    <TextEffect className="inline-flex" per="char" variants={blurSlideVariants} trigger={trigger}>
       Animate your ideas with motion-primitives
     </TextEffect>
   )

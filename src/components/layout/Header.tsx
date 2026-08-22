@@ -66,9 +66,7 @@ export function Header() {
                     to={item.href}
                     className={cn(
                       'font-sans text-[11px] lg:text-xs font-semibold tracking-wider transition-colors duration-150',
-                      isActive
-                        ? 'text-[#D6A068]'
-                        : 'text-[#EFE2D4]/90 hover:text-[#D6A068]',
+                      isActive ? 'text-[#D6A068]' : 'text-[#EFE2D4]/90 hover:text-[#D6A068]',
                     )}
                   >
                     {item.label}
@@ -144,9 +142,7 @@ export function Header() {
                         to={item.href}
                         className={cn(
                           'font-sans text-[11px] lg:text-xs font-semibold tracking-wider transition-colors duration-150',
-                          isActive
-                            ? 'text-[#D6A068]'
-                            : 'text-[#EFE2D4]/90 hover:text-[#D6A068]',
+                          isActive ? 'text-[#D6A068]' : 'text-[#EFE2D4]/90 hover:text-[#D6A068]',
                         )}
                       >
                         {item.label}

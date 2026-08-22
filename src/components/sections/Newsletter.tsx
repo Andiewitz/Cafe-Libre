@@ -67,7 +67,9 @@ export function Newsletter() {
                   {...register('email')}
                 />
                 {errors.email && (
-                  <p className="mt-1.5 text-xs text-red-300 text-left pl-4">{errors.email.message}</p>
+                  <p className="mt-1.5 text-xs text-red-300 text-left pl-4">
+                    {errors.email.message}
+                  </p>
                 )}
               </motion.div>
               <button
