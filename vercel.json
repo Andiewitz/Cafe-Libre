@@ -1,15 +1,13 @@
 {
-  "framework": "vite",
-  "cleanUrls": true,
   "rewrites": [
     {
-      "source": "/((?!assets/|images/|icons/|favicon\\.svg|icons\\.svg|placeholder\\.svg|.*\\..*).*)",
+      "source": "/((?!assets/|images/|favicon\\.svg|icons\\.svg|placeholder\\.svg|.*\\.[\\w]+$).*)",
       "destination": "/index.html"
     }
   ],
   "headers": [
     {
-      "source": "/images/(.*)",
+      "source": "/assets/(.*)",
       "headers": [
         {
           "key": "Cache-Control",
@@ -18,7 +16,7 @@
       ]
     },
     {
-      "source": "/assets/(.*)",
+      "source": "/images/(.*)",
       "headers": [
         {
           "key": "Cache-Control",

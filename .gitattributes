@@ -1,0 +1,26 @@
+# Auto-detect text files and perform LF normalization on checkout
+* text=auto eol=lf
+
+# Explicit binary files to prevent line-ending corruption (CRLF/LF conversion)
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.ico binary
+*.pdf binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.eot binary
+
+# SVG and source files
+*.svg text eol=lf
+*.ts text eol=lf
+*.tsx text eol=lf
+*.js text eol=lf
+*.jsx text eol=lf
+*.json text eol=lf
+*.css text eol=lf
+*.html text eol=lf
+*.md text eol=lf

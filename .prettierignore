@@ -4,3 +4,12 @@ dist
 .gitignore
 package-lock.json
 yarn.lock
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.webp
+*.ico
+*.svg
+public/images/**
+src/assets/images/**
